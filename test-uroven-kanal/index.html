@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>На каком уровне застрял ваш бизнес</title>
+<meta name="description" content="Тест на 18 утверждений. Отметьте, что про вас, и сразу получите свой уровень, что на нём перестаёт работать и первый шаг.">
+<style>
+:root{
+  --bg:#f8f1e9; --ink:#241a15; --accent:#c98a6b; --accent-ink:#2a1e17;
+  --muted:#6f6057; --card:#fffaf4; --line:rgba(36,26,21,.14);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding:28px 18px 64px}
+.wrap{max-width:720px;margin:0 auto}
+h1{font-size:30px;line-height:1.18;margin:0 0 14px;letter-spacing:-.01em}
+.lead{color:var(--muted);margin:0 0 26px}
+.lead p{margin:0 0 12px}
+.block{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px;margin:0 0 12px}
+label{display:flex;gap:12px;align-items:flex-start;padding:9px 0;cursor:pointer}
+label+label{border-top:1px solid var(--line)}
+input[type=checkbox]{appearance:none;width:24px;min-width:24px;height:24px;margin:1px 0 0;
+  border:2px solid var(--accent);border-radius:7px;cursor:pointer;position:relative;background:transparent}
+input[type=checkbox]:checked{background:var(--accent)}
+input[type=checkbox]:checked::after{content:"";position:absolute;left:7px;top:2px;width:6px;height:12px;
+  border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+input[type=checkbox]:focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:12px;
+  padding:16px 30px;font:inherit;font-weight:700;cursor:pointer;margin-top:8px}
+.btn:hover{filter:brightness(.95)}
+.btn.link{text-decoration:none;display:block;text-align:center;margin-top:20px}
+.hint{color:var(--muted);font-size:15px;margin-top:10px}
+#result{display:none;margin-top:34px;padding-top:26px;border-top:2px solid var(--accent)}
+#result h2{font-size:25px;margin:0 0 6px;line-height:1.2}
+#result .kicker{color:var(--accent-ink);background:var(--accent);display:inline-block;
+  padding:3px 11px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;margin-bottom:12px;color:#fff}
+#result h3{font-size:17px;margin:20px 0 4px}
+#result p{margin:0 0 12px}
+.tie{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+  margin-top:22px;font-size:15px;color:var(--muted)}
+.final{margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+footer{margin-top:40px;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:520px){body{padding:20px 14px 52px}h1{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>На каком уровне застрял ваш бизнес</h1>
+
+<div class="lead">
+<p>Когда дело перестаёт приносить деньги и удовольствие одновременно, обычно ищут ошибку в действиях. Меняют связку, нанимают человека, идут на очередное обучение.</p>
+<p>Чаще дело в другом. Вы прошли свой уровень до конца, и логика, которая держала вас всё это время, перестала работать. У каждого уровня своя механика: откуда приходят деньги, чем измеряется успех, что считается правильным решением. И у каждого свой тупик, через который из него выходят.</p>
+<p><strong>Отметьте утверждения, которые про вас сейчас.</strong> Считайте только про сегодня. Про то, как было год назад, считать смысла нет.</p>
+</div>
+
+<form id="q"></form>
+
+<button class="btn" id="go" type="button">Показать мой уровень</button>
+<div class="hint" id="hint">Отметьте хотя бы одно утверждение.</div>
+
+<section id="result" aria-live="polite">
+  <div class="kicker" id="r-level"></div>
+  <h2 id="r-title"></h2>
+  <h3>Что происходит</h3><p id="r-what"></p>
+  <h3>Что перестаёт работать</h3><p id="r-broken"></p>
+  <h3>Первый шаг</h3><p id="r-step"></p>
+
+  <div class="tie" id="r-tie"></div>
+
+  <div class="final">
+    <p>Уровень это не диагноз и не приговор. Это описание логики, в которой вы сейчас находитесь, и она меняется.</p>
+    <p>Вы уже в канале встречи, поэтому никуда переходить не нужно. Запомните свой уровень и своё «что перестаёт работать», на эфире 10 августа мы разберём именно эти переходы, а живые разборы я построю на ваших ситуациях.</p>
+    <p>Записи не будет, работаем один раз и вживую.</p>
+  </div>
+</section>
+
+<footer>Александра Андриянова</footer>
+</div>
+
+<script>
+const BLOCKS = [
+ {id:"A", level:"Уровень выживания", color:"бежевый",
+  items:["Деньги в деле заканчиваются раньше, чем приходят новые.",
+         "Планировать дальше, чем на месяц, кажется бессмысленным.",
+         "Любая незапланированная трата выбивает из колеи на несколько дней."],
+  what:"Дело работает в режиме затыкания дыр. Горизонт планирования равен сроку ближайшего платежа. Энергия уходит на то, чтобы дожить до конца месяца.",
+  broken:"Стратегия. Любой план разбивается о кассовый разрыв, поэтому планировать вы перестаёте, и это выглядит как разумное решение.",
+  step:"Считайте деньги на счету понедельно, прибыль пока отложите. Вам нужен горизонт в шесть недель. Годовая стратегия до этого преждевременна."},
+
+ {id:"B", level:"Уровень своих людей", color:"фиолетовый",
+  items:["В команде есть люди, которых нельзя уволить по личным причинам.",
+         "Решения принимаются по принципу «мы же свои, договоримся».",
+         "Разговор о деньгах внутри команды ощущается как предательство."],
+  what:"Компания собрана на родственниках, друзьях и людях, пришедших по знакомству. Отношения важнее результата, поэтому неудобные решения не принимаются.",
+  broken:"Рост. Каждый новый уровень требует людей сильнее нынешних, а взять их некуда: место занято теми, кого нельзя тронуть.",
+  step:"Назовите вслух, кто на каком месте находится по работе. Отношения в этом разговоре выносим за скобки. Он тяжёлый, и он единственный, который сдвигает этот уровень."},
+
+ {id:"V", level:"Уровень ручного управления", color:"красный",
+  items:["Без вас не проходит ни один важный день, отпуск переносится третий раз.",
+         "Быстрее сделать своими руками, чем объяснять.",
+         "Усталость стала фоном, и вы уже не помните, когда её не было."],
+  what:"Всё держится на вас. Без вас встаёт. Скорость решений высокая, потому что решает один человек, и он же становится узким горлышком.",
+  broken:"Вы сами. Ресурс владельца конечен, и потолок бизнеса равен вашей выносливости. Дальше идёт выгорание, и приходит оно не усталостью. Приходит безразличием.",
+  step:"Выберите одно решение, которое вы принимаете каждую неделю, и отдайте его целиком, вместе с правом ошибиться. Одно, не пять."},
+
+ {id:"G", level:"Уровень регламентов", color:"синий",
+  items:["Регламенты написаны, процессы описаны, а инициативы нет ни у кого.",
+         "Люди делают строго то, что в инструкции, и ни шагом больше.",
+         "Новое внедряется долго и умирает тихо."],
+  what:"Порядок наведён, процессы описаны, всё предсказуемо. И вместе с хаосом ушла инициатива.",
+  broken:"Развитие. Система хорошо воспроизводит вчерашний результат и плохо рождает новый, потому что за инициативу здесь никто не отвечает.",
+  step:"Найдите один процесс, где правило существует дольше, чем причина, по которой оно появилось. Отмените его и посмотрите, что произойдёт."},
+
+ {id:"D", level:"Уровень достигаторства", color:"оранжевый",
+  items:["Цифры растут, а внутри пусто.",
+         "Следующая цель уже не радует, ещё до того, как достигнута.",
+         "Вы ловите себя на мысли «и что, так теперь всегда»."],
+  what:"Цифры растут, дело работает, со стороны всё хорошо. Внутри пусто, и следующая цель перестала радовать заранее.",
+  broken:"Мотивация ростом. Она держала вас годами, а теперь достижение перестало давать то, ради чего вы за ним шли.",
+  step:"Ответьте себе, чью цель вы сейчас закрываете. Часто на этом уровне человек обнаруживает, что бежит по маршруту, который выбрал в двадцать пять и с тех пор не пересматривал."},
+
+ {id:"E", level:"Уровень команды-семьи", color:"зелёный",
+  items:["В команде всем комфортно, а прибыль идёт вниз.",
+         "Неприятные разговоры откладываются, чтобы не портить отношения.",
+         "Вы давно не слышали от своих людей ничего неудобного."],
+  what:"В команде тепло, люди держатся друг за друга, конфликтов почти нет. И прибыль идёт вниз.",
+  broken:"Правда. Неприятные разговоры откладываются ради атмосферы, поэтому плохие новости доходят до вас последними и уже в виде последствий.",
+  step:"Спросите у трёх человек, что они не говорят вам, потому что боятся испортить отношения. Ответы будут не сразу, спросить придётся дважды."}
+];
+
+const form = document.getElementById("q");
+BLOCKS.forEach((b, bi) => {
+  const box = document.createElement("div");
+  box.className = "block";
+  b.items.forEach((text, ii) => {
+    const l = document.createElement("label");
+    l.innerHTML = '<input type="checkbox" data-b="' + bi + '"><span>' + text + '</span>';
+    box.appendChild(l);
+  });
+  form.appendChild(box);
+});
+
+document.getElementById("go").addEventListener("click", () => {
+  const scores = BLOCKS.map(() => 0);
+  document.querySelectorAll("#q input:checked").forEach(i => scores[+i.dataset.b]++);
+  const total = scores.reduce((a, b) => a + b, 0);
+  const hint = document.getElementById("hint");
+  if (!total) { hint.textContent = "Отметьте хотя бы одно утверждение, иначе считать нечего."; return; }
+  hint.textContent = "";
+
+  const max = Math.max(...scores);
+  const winners = scores.map((s, i) => [s, i]).filter(p => p[0] === max).map(p => p[1]);
+  const b = BLOCKS[winners[0]];
+
+  document.getElementById("r-level").textContent = b.color;
+  document.getElementById("r-title").textContent = b.level;
+  document.getElementById("r-what").textContent = b.what;
+  document.getElementById("r-broken").textContent = b.broken;
+  document.getElementById("r-step").textContent = b.step;
+
+  const tie = document.getElementById("r-tie");
+  if (winners.length > 1) {
+    const names = winners.map(i => BLOCKS[i].level.toLowerCase()).join(" и ");
+    tie.textContent = "У вас поровну отметок в двух местах: " + names +
+      ". Это норма. Ошибки в тесте здесь нет: переход между уровнями занимает месяцы, и в это время человек живёт сразу в двух логиках. Смотрите на тот блок, который читать было неприятнее. Обычно сопротивление показывает точнее, чем подсчёт.";
+    tie.style.display = "block";
+  } else {
+    tie.style.display = "none";
+  }
+
+  const r = document.getElementById("result");
+  r.style.display = "block";
+  r.scrollIntoView({behavior: "smooth", block: "start"});
+});
+</script>
+</body>
+</html>
