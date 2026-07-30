@@ -52,7 +52,11 @@ img{max-width:100%;display:block;height:auto}
 a{color:inherit}
 /* заголовки разбиваются на ровные строки, в абзацах последняя строка не остаётся
    из одного слова. Браузеры без поддержки просто переносят как раньше */
-h1,h2,.pull,.price-hero,.story-sum,.qmark{text-wrap:balance}
+/* .story-sum НАМЕРЕННО без balance: Safari на балансировке строк вместе с
+   неразрывным пробелом перемешивает символы, и суммы читались мусором
+   (правка Виктории 30.07, скрин с её iPhone). Числа в balance не ставим. */
+h1,h2,.pull,.price-hero,.qmark{text-wrap:balance}
+.story-sum{text-wrap:normal}
 h3{text-wrap:pretty}
 p,li,.result,.story-niche{text-wrap:pretty}
 
@@ -546,7 +550,7 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
       <p class="story-niche">предприниматель</p>
     </div>
   </header>
-  <p class="story-sum">госконтракты на 2,5 млн ₽</p>
+  <p class="story-sum">госконтракты на 2,5 млн ₽</p>
   <div class="story-col">
     <p class="story-lbl">Точка А</p>
     <ul class="story-a"><li>Часы, машина, уверенный вид</li><li>За фасадом 300 тысяч чистыми и кассовый разрыв</li></ul>
@@ -563,7 +567,7 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
       <p class="story-niche">предприниматель</p>
     </div>
   </header>
-  <p class="story-sum">600 000 ₽ за 3 месяца</p>
+  <p class="story-sum">600 000 ₽ за 3 месяца</p>
   <div class="story-col">
     <p class="story-lbl">Точка А</p>
     <ul class="story-a"><li>Пришла после операции</li><li>Денег ноль</li></ul>
@@ -580,7 +584,7 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
       <p class="story-niche">предприниматель</p>
     </div>
   </header>
-  <p class="story-sum">оборот 1,7 млн ₽ в месяц</p>
+  <p class="story-sum">оборот 1,7 млн ₽ в месяц</p>
   <div class="story-col">
     <p class="story-lbl">Точка А</p>
     <ul class="story-a"><li>Доход 40 тысяч на входе</li></ul>
