@@ -57,17 +57,15 @@ h3{text-wrap:pretty}
 p,li,.result,.story-niche{text-wrap:pretty}
 
 :root{
-  --gold:#c9a24a; --gold-lt:#f2dca6; --cream:#ece5da; --mute:#8b8377;
-  --ink:#0c0c0e; --line:rgba(201,162,74,.22);
+  /* Палитра КЛИЕНТА (.claude/design.md): near-black плюс малиновый неон.
+     Золото эталонного проекта не наше, Виктория поймала это 30.07. */
+  --gold:#E0245A; --gold-lt:#FF6E93; --cream:#F2ECF0; --mute:#A896A4;
+  --ink:#0E0A12; --line:rgba(224,36,90,.22);
   --wrap:1180px; --read:720px;
-  /* Заголовки набраны шрифтом с сайта Кати: в её теме он спрятан под именем Showshrift,
-     весом 700 там стоит Anticva. Файл лежит у нас, чтобы страница не зависела от Тильды. */
-  --serif:'Anticva','Playfair Display',Georgia,serif;
-}
-@font-face{
-  font-family:'Anticva';
-  src:url('fonts/anticva-regular.woff') format('woff');
-  font-weight:400;font-style:normal;font-display:swap;
+  /* Засечная для заголовков. Шрифт из шаблона снят: чужой бренд-ассет, и в нём нет
+     ни знака рубля, ни узкого пробела, из-за чего суммы в Safari рисовались мусором. */
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Onest',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 }
 
 .wrap{width:min(100% - 44px,var(--wrap));margin-inline:auto}
@@ -96,15 +94,15 @@ strong,b{font-weight:600}
 /* ---------- sections ---------- */
 section{position:relative;padding:clamp(76px,10vw,140px) 0}
 .sec-line{height:1px;border:0;margin:0;
-  background:linear-gradient(90deg,transparent,rgba(201,162,74,.34),transparent)}
+  background:linear-gradient(90deg,transparent,rgba(224,36,90,.34),transparent)}
 .panel{background:linear-gradient(180deg,#0b0b0d,#0e0e11)}
 
 /* ---------- hero ---------- */
 .hero{
   min-height:100svh;display:flex;align-items:center;padding:96px 0 72px;
   background:
-    radial-gradient(120% 90% at 78% 26%,rgba(201,162,74,.20),transparent 58%),
-    radial-gradient(90% 70% at 8% 88%,rgba(201,162,74,.07),transparent 60%),
+    radial-gradient(120% 90% at 78% 26%,rgba(224,36,90,.20),transparent 58%),
+    radial-gradient(90% 70% at 8% 88%,rgba(224,36,90,.07),transparent 60%),
     #070708;
   overflow:hidden;
 }
@@ -112,7 +110,7 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
 /* кегль подобран под ДОСЛОВНУЮ шапку клиента (она длиннее слогана), чтобы первый экран
    вмещал заголовок, лид и кнопку целиком */
 .hero h1{font-size:clamp(30px,3.9vw,52px);line-height:1.12;margin:0 0 22px}
-/* у ёлочек в Anticva широкие боковые поля, из-за них слово в кавычках
+/* у ёлочек в засечной широкие боковые поля, из-за них слово в кавычках
    разъезжается и точка после кавычки отлетает. Поджимаем сами кавычки */
 .q{margin:0 -.16em;letter-spacing:0}
 .q2{margin-right:-.3em}
@@ -121,12 +119,12 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
 .hero-figure{position:relative}
 .hero-figure::after{
   content:'';position:absolute;inset:-14% -10% -6% -10%;z-index:-1;
-  background:radial-gradient(60% 55% at 50% 42%,rgba(201,162,74,.28),transparent 70%);
+  background:radial-gradient(60% 55% at 50% 42%,rgba(224,36,90,.28),transparent 70%);
   filter:blur(18px);
 }
 .hero-figure img{width:100%;border-radius:2px;position:relative;z-index:1}
 .hero-figure::before{
-  content:'';position:absolute;inset:22px -22px -22px 22px;border:1px solid rgba(201,162,74,.42);
+  content:'';position:absolute;inset:22px -22px -22px 22px;border:1px solid rgba(224,36,90,.42);
   border-radius:2px;z-index:0
 }
 .hero-figure figcaption{
@@ -145,8 +143,8 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
   padding:19px 44px;border-radius:999px;text-decoration:none;
   font-family:'Manrope',sans-serif;font-size:14.5px;font-weight:600;
   letter-spacing:.16em;text-transform:uppercase;color:#141008;
-  background:linear-gradient(100deg,#b8903c,#f2dca6 46%,#c9a24a);
-  box-shadow:0 18px 44px -20px rgba(201,162,74,.85);
+  background:linear-gradient(100deg,#B01743,#FF6E93 46%,#E0245A);
+  box-shadow:0 18px 44px -20px rgba(224,36,90,.85);
   position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s
 }
 .btn::after{
@@ -154,7 +152,7 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
   background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
   transform:skewX(-18deg);transition:left .6s ease
 }
-.btn:hover{transform:translateY(-2px);box-shadow:0 24px 56px -20px rgba(201,162,74,.95)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 24px 56px -20px rgba(224,36,90,.95)}
 .btn:hover::after{left:130%}
 .btn-ghost{
   background:none;color:var(--gold-lt);border:1px solid var(--line);box-shadow:none
@@ -174,7 +172,7 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
 }
 .pull{
   margin:clamp(44px,6vw,72px) auto;text-align:center;max-width:24ch;
-  font-family:var(--serif);font-size:clamp(28px,3.6vw,44px);line-height:1.2;color:#f7f1e6
+  font-family:var(--serif);font-size:clamp(28px,3.6vw,44px);line-height:1.2;color:#F2ECF0
 }
 .pull::before,.pull::after{
   content:'';display:block;width:64px;height:1px;margin:26px auto;
@@ -206,7 +204,7 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
 }
 .card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(201,162,74,.55),transparent)
+  background:linear-gradient(90deg,transparent,rgba(224,36,90,.55),transparent)
 }
 .card h3{margin-bottom:12px}
 .card p{margin:0;font-size:17px;color:#cdc6bb}
@@ -231,20 +229,20 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
 .case{text-align:center}
 .case img{
   width:clamp(76px,9vw,124px);aspect-ratio:1;border-radius:50%;object-fit:cover;margin:0 auto 14px;
-  border:1px solid rgba(201,162,74,.35);
-  box-shadow:0 0 0 6px rgba(201,162,74,.05);transition:transform .4s,box-shadow .4s
+  border:1px solid rgba(224,36,90,.35);
+  box-shadow:0 0 0 6px rgba(224,36,90,.05);transition:transform .4s,box-shadow .4s
 }
-.case:hover img{transform:translateY(-4px);box-shadow:0 0 0 8px rgba(201,162,74,.12)}
+.case:hover img{transform:translateY(-4px);box-shadow:0 0 0 8px rgba(224,36,90,.12)}
 .case b{display:block;font-size:13px;font-weight:500;color:var(--mute);letter-spacing:.02em}
 .case span{display:block;margin-top:5px;font-size:15.5px;font-weight:600;color:var(--gold-lt)}
 
 /* ---------- slider ---------- */
 .rail{
   display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;
-  padding:8px 0 26px;margin-top:44px;scrollbar-width:thin;scrollbar-color:rgba(201,162,74,.4) transparent
+  padding:8px 0 26px;margin-top:44px;scrollbar-width:thin;scrollbar-color:rgba(224,36,90,.4) transparent
 }
 .rail::-webkit-scrollbar{height:3px}
-.rail::-webkit-scrollbar-thumb{background:rgba(201,162,74,.4)}
+.rail::-webkit-scrollbar-thumb{background:rgba(224,36,90,.4)}
 .rail img{
   flex:0 0 min(78vw,470px);scroll-snap-align:center;border-radius:3px;
   border:1px solid rgba(255,255,255,.07)
@@ -260,19 +258,21 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
 }
 .story::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(201,162,74,.5),transparent)
+  background:linear-gradient(90deg,transparent,rgba(224,36,90,.5),transparent)
 }
 .story-top{display:flex;gap:16px;align-items:center;margin-bottom:22px}
 .story-top img{
   width:66px;height:66px;border-radius:50%;object-fit:cover;flex:0 0 auto;
-  border:1px solid rgba(201,162,74,.4)
+  border:1px solid rgba(224,36,90,.4)
 }
 .story-top h3{font-size:21px;margin-bottom:4px}
 .story-niche{margin:0;font-size:13px;color:var(--mute);line-height:1.4}
-.story-handle{margin:3px 0 0;font-size:12.5px;color:rgba(242,220,166,.75);letter-spacing:.04em}
+.story-handle{margin:3px 0 0;font-size:12.5px;color:rgba(255,110,147,.75);letter-spacing:.04em}
+/* Суммы гротеском намеренно: в засечной антикве Safari подменял ₽ на Р и переставлял
+   запятую, «1,7 млн ₽» читалось как «17 ,млнРвмесяц» (правка Виктории 30.07). */
 .story-sum{
-  font-family:var(--serif);font-size:30px;color:var(--gold-lt);margin:0 0 24px;
-  letter-spacing:.01em
+  font-family:var(--sans);font-size:27px;font-weight:600;color:var(--gold-lt);
+  margin:0 0 24px;letter-spacing:0
 }
 .story-lbl{
   margin:0 0 10px;font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
@@ -292,10 +292,10 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
 .more-btn{
   display:none;width:100%;margin-top:20px;padding:16px 22px;font:inherit;font-size:13px;
   font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);
-  background:rgba(201,162,74,.06);border:1px solid rgba(201,162,74,.32);border-radius:3px;
+  background:rgba(224,36,90,.06);border:1px solid rgba(224,36,90,.32);border-radius:3px;
   cursor:pointer;transition:background .3s ease,border-color .3s ease
 }
-.more-btn:hover{background:rgba(201,162,74,.12);border-color:rgba(201,162,74,.55)}
+.more-btn:hover{background:rgba(224,36,90,.12);border-color:rgba(224,36,90,.55)}
 
 /* ---------- fears ---------- */
 .fears{display:grid;gap:18px;margin-top:46px}
@@ -303,13 +303,13 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
   padding:32px 34px;border:1px solid rgba(255,255,255,.08);border-radius:3px;
   background:linear-gradient(180deg,rgba(255,255,255,.03),transparent)
 }
-.fear h3{color:#f7f1e6;margin-bottom:12px;font-size:clamp(19px,2vw,23px)}
+.fear h3{color:#F2ECF0;margin-bottom:12px;font-size:clamp(19px,2vw,23px)}
 .fear p{margin:0;color:#cdc6bb;font-size:17.5px}
 
 /* ---------- price ---------- */
 .price-hero{
   font-family:var(--serif);font-size:clamp(26px,3.4vw,40px);line-height:1.25;
-  color:#f7f1e6;margin:0 0 34px
+  color:#F2ECF0;margin:0 0 34px
 }
 .price-hero em{font-style:normal;color:var(--gold-lt)}
 
@@ -317,13 +317,13 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
 .final{
   text-align:center;
   background:
-    radial-gradient(90% 70% at 50% 0%,rgba(201,162,74,.18),transparent 62%),
+    radial-gradient(90% 70% at 50% 0%,rgba(224,36,90,.18),transparent 62%),
     linear-gradient(180deg,#0a0a0c,#070708);
 }
 .final h2{margin-bottom:30px}
 .final .read p{color:#ded7cb}
 .sign{
-  font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);color:#f7f1e6;
+  font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);color:#F2ECF0;
   margin-top:40px;line-height:1.4
 }
 
@@ -347,8 +347,8 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
 /* ---------- reading progress ---------- */
 .prog{
   position:fixed;top:0;left:0;height:2px;width:0;z-index:9;pointer-events:none;
-  background:linear-gradient(90deg,rgba(198,160,90,.25),var(--gold));
-  box-shadow:0 0 14px rgba(198,160,90,.55);transition:width .12s linear;
+  background:linear-gradient(90deg,rgba(224,36,90,.25),var(--gold));
+  box-shadow:0 0 14px rgba(224,36,90,.55);transition:width .12s linear;
 }
 
 /* ---------- hero parallax ---------- */
@@ -357,12 +357,12 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
 /* ---------- card lift ---------- */
 .card,.story,.case{transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s ease,border-color .45s ease}
 .card:hover,.story:hover{
-  transform:translateY(-6px);border-color:rgba(198,160,90,.42);
-  box-shadow:0 18px 46px rgba(0,0,0,.55),0 0 0 1px rgba(198,160,90,.16) inset;
+  transform:translateY(-6px);border-color:rgba(224,36,90,.42);
+  box-shadow:0 18px 46px rgba(0,0,0,.55),0 0 0 1px rgba(224,36,90,.16) inset;
 }
 .case:hover{transform:translateY(-4px)}
 .case img{transition:box-shadow .45s ease,filter .45s ease}
-.case:hover img{box-shadow:0 0 0 2px rgba(198,160,90,.5),0 14px 30px rgba(0,0,0,.5);filter:saturate(1.06)}
+.case:hover img{box-shadow:0 0 0 2px rgba(224,36,90,.5),0 14px 30px rgba(0,0,0,.5);filter:saturate(1.06)}
 
 /* ---------- draggable rails ---------- */
 .rail{cursor:grab}
@@ -391,8 +391,8 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
 
 /* ---------- breathing cta ---------- */
 @keyframes breathe{
-  0%,100%{box-shadow:0 10px 30px rgba(0,0,0,.45),0 0 0 0 rgba(198,160,90,.34)}
-  50%{box-shadow:0 10px 34px rgba(0,0,0,.5),0 0 34px 6px rgba(198,160,90,.22)}
+  0%,100%{box-shadow:0 10px 30px rgba(0,0,0,.45),0 0 0 0 rgba(224,36,90,.34)}
+  50%{box-shadow:0 10px 34px rgba(0,0,0,.5),0 0 34px 6px rgba(224,36,90,.22)}
 }
 .dock .btn{animation:breathe 3.4s ease-in-out infinite}
 
@@ -546,14 +546,14 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
       <p class="story-niche">предприниматель</p>
     </div>
   </header>
-  <p class="story-sum">вышел из кассового разрыва в госконтракты</p>
+  <p class="story-sum">госконтракты на 2,5 млн ₽</p>
   <div class="story-col">
     <p class="story-lbl">Точка А</p>
-    <ul class="story-a"><li>Часы, машина, уверенный вид</li><li>За фасадом кассовый разрыв</li></ul>
+    <ul class="story-a"><li>Часы, машина, уверенный вид</li><li>За фасадом 300 тысяч чистыми и кассовый разрыв</li></ul>
   </div>
   <div class="story-col">
     <p class="story-lbl gold">Точка Б</p>
-    <ul class="story-b"><li>Разобрали, откуда взялась потребность держать фасад</li><li>Вышел на госконтракты</li><li>Сейчас в программе его жена</li></ul>
+    <ul class="story-b"><li>Разобрали, откуда взялась потребность держать фасад</li><li>Вышел на госконтракты на 2,5 миллиона</li><li>Сейчас в программе его жена</li></ul>
   </div>
 </article>
 <article class="story">
@@ -580,7 +580,7 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
       <p class="story-niche">предприниматель</p>
     </div>
   </header>
-  <p class="story-sum">оборот 1,7 млн ₽ в месяц</p>
+  <p class="story-sum">оборот 1,7 млн ₽ в месяц</p>
   <div class="story-col">
     <p class="story-lbl">Точка А</p>
     <ul class="story-a"><li>Доход 40 тысяч на входе</li></ul>
@@ -616,10 +616,9 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
 <section class="panel">
   <div class="read rv">
     <p class="eyebrow">Что это вам стоит</p>
-    <p class="price-hero">Участие бесплатное.<br><em>Записи не будет, эта работа идёт только вживую.</em></p>
+    <p class="price-hero">Участие бесплатное.<br><em>Вот что остаётся у вас в любом случае.</em></p>
     <p>Разбор по той же логике, по которой я работаю на личной диагностике.</p>
 <p>Доступ в закрытый канал, где до 10 августа я выкладываю материалы, которых нет в открытых источниках.</p>
-<p>Записи не будет. Эта работа идёт только в живом контексте, поэтому встречаемся один раз и вживую.</p>
 <p>Продавать со сцены я не люблю. Если после эфира захотите работать со мной дальше, расскажу, как это устроено. Если не захотите, останетесь с разбором и материалами.</p>
     <div class="cta-row"><a class="btn btn-ghost" href="https://t.me/andriyanovaalex_bot?start=efir-krash-test" target="_blank" rel="noopener">Забрать место</a></div>
   </div>
