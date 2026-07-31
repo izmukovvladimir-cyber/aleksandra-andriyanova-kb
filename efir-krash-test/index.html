@@ -791,6 +791,19 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   }
 });
+
+/* Метка источника. Открыли страницу как /efir-krash-test/?m=mm, и все кнопки уводят
+   в бота с параметром start=efir-krash-test-mm, поэтому в кабинете видно, что человек
+   пришёл из чатов мастермайнда. Метки нет или она кривая, ссылки остаются как были,
+   так что обычный трафик этим не задеть. Скрипт стоит в конце body, DOM уже собран. */
+(function(){
+  try{
+    var m=(new URLSearchParams(location.search).get('m')||'').toLowerCase();
+    if(!/^[a-z0-9]{1,16}$/.test(m)) return;
+    var links=document.querySelectorAll('a[href*="?start=efir-krash-test"]');
+    for(var i=0;i<links.length;i++){ links[i].href=links[i].href+'-'+m; }
+  }catch(e){}
+})();
 </script>
 </body>
 </html>
