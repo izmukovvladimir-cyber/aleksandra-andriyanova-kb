@@ -409,7 +409,8 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
   .hero-grid,.author-grid{grid-template-columns:1fr;gap:34px}
   /* портрет не должен съедать первый экран: хук обязан быть виден сразу, без прокрутки */
   .hero-figure{order:-1;max-width:300px;margin-inline:auto}
-  .hero-figure img{max-height:38svh;object-fit:cover;object-position:50% 12%}
+  /* баннер эфира от Виктории квадратный: cover срезал бы ей голову, поэтому contain */
+  .hero-figure img{max-height:44svh;object-fit:contain}
   /* на 430px капитель антиквы упиралась в оба края экрана, поэтому цитата тут мельче и уже */
   .pull{font-size:26px;max-width:17ch}
   .levels,.results{grid-template-columns:1fr}
