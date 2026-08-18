@@ -31,7 +31,9 @@ button { margin-top:22px; width:100%; padding:16px; font-size:17px; font-weight:
 #out h2 { margin:0 0 6px; font-size:23px; }
 .score { color:var(--muted); margin:0 0 18px; }
 .support { margin-top:22px; padding-top:18px; border-top:1px solid var(--line); }
-.cta { margin-top:26px; padding:18px; border-radius:12px; background:#fdf6f8; }
+.cta { margin-top:26px; padding:20px; border-radius:12px; background:#fdf6f8; }
+.cta a { display:block; margin-top:14px; padding:16px; text-align:center; font-weight:600;
+  color:#fff; background:var(--accent); border-radius:12px; text-decoration:none; }
 </style></head><body><div class="wrap">
 <h1>На каком уровне живут ваши отношения</h1>
 <p class="lead">Отмечайте всё, в чём узнаёте себя, даже если узнаёте наполовину. Правильных ответов здесь нет, честные ответы дают точный результат.</p>
@@ -86,7 +88,10 @@ const finish = () => {
         D.results[second].html + '</div>';
     }
     html += '<div class="cta"><strong>25 августа в 19:00</strong> я разбираю эти уровни вживую: ' +
-      'где стоит ваша пара, почему вас не слышат и что делать следующим шагом.</div>';
+      'где стоит ваша пара, почему вас не слышат и что делать следующим шагом. ' +
+      'Напишите мне свою ситуацию, разберу её на эфире.' +
+      '<a href="https://t.me/Aleksandra_Andriyanova" target="_blank" rel="noopener">' +
+      'Написать запрос на эфир</a></div>';
     out.innerHTML = html;
   }
   document.getElementById('items').style.display = 'none';
