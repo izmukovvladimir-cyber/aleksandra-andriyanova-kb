@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>На каком уровне живут ваши отношения</title>
+<style>
+:root { --bg:#faf7f2; --ink:#1d1a17; --muted:#6b625a; --line:#e3dbd0; --accent:#8e2f52; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:17px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif; }
+.wrap { max-width:720px; margin:0 auto; padding:40px 20px 80px; }
+h1 { font-size:30px; line-height:1.2; margin:0 0 12px; }
+.lead { color:var(--muted); margin:0 0 28px; }
+.page { display:none; }
+.page.on { display:block; animation:in .25s ease; }
+@keyframes in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+.bar { height:4px; background:var(--line); border-radius:4px; overflow:hidden; margin:0 0 22px; }
+.bar i { display:block; height:100%; width:0; background:var(--accent); transition:width .3s ease; }
+.step { color:var(--muted); font-size:15px; margin:0 0 14px; }
+.nav { display:flex; gap:12px; margin-top:22px; }
+.nav button { margin-top:0; }
+.back { flex:0 0 auto; width:auto; padding:16px 22px; color:var(--accent);
+  background:#fff; border:1px solid var(--line); }
+.item { display:flex; gap:12px; align-items:flex-start; padding:13px 16px; margin-bottom:8px;
+  background:#fff; border:1px solid var(--line); border-radius:12px; cursor:pointer; }
+.item:has(input:checked) { border-color:var(--accent); background:#fdf6f8; }
+.item input { margin-top:4px; width:18px; height:18px; accent-color:var(--accent); flex:none; }
+button { margin-top:22px; width:100%; padding:16px; font-size:17px; font-weight:600;
+  color:#fff; background:var(--accent); border:0; border-radius:12px; cursor:pointer; }
+#out { display:none; margin-top:32px; padding:24px; background:#fff;
+  border:1px solid var(--line); border-radius:16px; }
+#out h2 { margin:0 0 6px; font-size:23px; }
+.score { color:var(--muted); margin:0 0 18px; }
+.support { margin-top:22px; padding-top:18px; border-top:1px solid var(--line); }
+.cta { margin-top:26px; padding:18px; border-radius:12px; background:#fdf6f8; }
+</style></head><body><div class="wrap">
+<h1>На каком уровне живут ваши отношения</h1>
+<p class="lead">Отмечайте всё, в чём узнаёте себя, даже если узнаёте наполовину. Правильных ответов здесь нет, честные ответы дают точный результат.</p>
+<div class="bar"><i id="bar"></i></div>
+<p class="step" id="step"></p>
+<div id="items"><section class="page" data-page="1"><label class="item"><input type="checkbox" data-level="violet"><span>Мне страшно представить себя без него, даже когда мне плохо</span></label><label class="item"><input type="checkbox" data-level="red"><span>Если я уступлю, он сядет мне на шею</span></label><label class="item"><input type="checkbox" data-level="blue"><span>У нас у каждого свои обязанности, так и должно быть</span></label><label class="item"><input type="checkbox" data-level="orange"><span>Я расту, а он остался на месте, и меня это раздражает</span></label><label class="item"><input type="checkbox" data-level="green"><span>Мы всё проговариваем, а влечения почти не осталось</span></label><label class="item"><input type="checkbox" data-level="beige"><span>Сейчас на первом месте деньги и крыша над головой, до отношений просто не доходит</span></label></section><section class="page" data-page="2"><label class="item"><input type="checkbox" data-level="red"><span>Мы миримся так же бурно, как ссоримся</span></label><label class="item"><input type="checkbox" data-level="blue"><span>Разводиться нельзя, у нас дети и общая жизнь</span></label><label class="item"><input type="checkbox" data-level="violet"><span>Я подстраиваю свои планы и настроение под него</span></label><label class="item"><input type="checkbox" data-level="green"><span>Мы лучшие друзья, и это точнее, чем мужчина и женщина</span></label><label class="item"><input type="checkbox" data-level="beige"><span>Я остаюсь рядом, потому что одна финансово не вытяну</span></label><label class="item"><input type="checkbox" data-level="orange"><span>Мы чаще обсуждаем задачи и деньги, чем то, что чувствуем</span></label></section><section class="page" data-page="3"><label class="item"><input type="checkbox" data-level="blue"><span>Мы живём по накатанной, страсти нет, зато надёжно</span></label><label class="item"><input type="checkbox" data-level="green"><span>Я боюсь ранить его прямым словом, поэтому смягчаю</span></label><label class="item"><input type="checkbox" data-level="orange"><span>Мне важно, чтобы партнёр соответствовал моему уровню</span></label><label class="item"><input type="checkbox" data-level="beige"><span>Дома бывает страшно, и я думаю о том, как себя обезопасить</span></label><label class="item"><input type="checkbox" data-level="red"><span>Я знаю, чем его задеть, и в ссоре этим пользуюсь</span></label><label class="item"><input type="checkbox" data-level="violet"><span>Мне проще промолчать, лишь бы он не разозлился</span></label></section><section class="page" data-page="4"><label class="item"><input type="checkbox" data-level="green"><span>Мы бережём чувства друг друга так, что перестали спорить</span></label><label class="item"><input type="checkbox" data-level="orange"><span>Я вкладываюсь в отношения как в проект и жду отдачи</span></label><label class="item"><input type="checkbox" data-level="beige"><span>Я живу от одного тяжёлого дня к другому, планировать не получается</span></label><label class="item"><input type="checkbox" data-level="red"><span>В нашей паре кто-то всегда сверху, и это заметно</span></label><label class="item"><input type="checkbox" data-level="violet"><span>Наша семья это одно целое, выносить что-то наружу нельзя</span></label><label class="item"><input type="checkbox" data-level="blue"><span>Я делаю то, что положено жене, даже когда не хочется</span></label></section><section class="page" data-page="5"><label class="item"><input type="checkbox" data-level="orange"><span>У меня многое получается, а внутри пусто</span></label><label class="item"><input type="checkbox" data-level="beige"><span>Мысль уйти упирается в вопрос, куда я пойду</span></label><label class="item"><input type="checkbox" data-level="green"><span>Я жду от него инициативы и не дожидаюсь</span></label><label class="item"><input type="checkbox" data-level="violet"><span>С ним тяжело, и всё равно я держусь за него</span></label><label class="item"><input type="checkbox" data-level="blue"><span>Мы вместе, потому что так правильно, вопрос чувств я не поднимаю</span></label><label class="item"><input type="checkbox" data-level="red"><span>Я проверяю его телефон и переписки</span></label></section><section class="page" data-page="6"><label class="item"><input type="checkbox" data-level="beige"><span>Мне не до близости, у меня на неё нет сил</span></label><label class="item"><input type="checkbox" data-level="violet"><span>Когда он далеко, я не нахожу себе места</span></label><label class="item"><input type="checkbox" data-level="red"><span>Я тащу всё на себе и злюсь на него за слабость</span></label><label class="item"><input type="checkbox" data-level="blue"><span>Мы больше похожи на соседей, чем на пару</span></label><label class="item"><input type="checkbox" data-level="orange"><span>Я меряю нашу пару результатами: доход, жильё, статус</span></label><label class="item"><input type="checkbox" data-level="green"><span>Близость стала делом договорённости, желание приходит редко</span></label></section></div>
+<div class="nav" id="nav">
+  <button class="back" id="back" hidden>Назад</button>
+  <button id="go">Дальше</button>
+</div>
+<div id="out"></div>
+</div>
+<script>
+const D = {"results": {"beige": {"title": "Бежевый. Отношений сейчас нет, есть выживание", "html": "<p>Вы отметили пункты, которые говорят об одном: у вас сейчас нет ресурса на отношения. Деньги, жильё, безопасность, силы. Всё внимание уходит туда, и это правильно, потому что на пустом баке пару не чинят.</p><p>Разговоры про близость и внимание в такой точке звучат как издевательство. Сначала земля под ногами, дальше всё остальное.</p><p><strong>Первый шаг.</strong> Назовите одну вещь, которая закроет вопрос безопасности в ближайший месяц: деньги на аренду, работа, помощь близких, отдельная комната. Одну, без списка. Пока она не закрыта, решения про отношения принимать рано.</p>"}, "violet": {"title": "Фиолетовый. Вы растворились в партнёре", "html": "<p>Вы отмечали пункты про страх остаться одной и про то, что проще промолчать. Это уровень слияния: своих желаний почти не слышно, зато очень слышно, как бы не потерять его.</p><p>Так живут по одной причине. Одиночество когда-то оказалось опаснее любой несправедливости, и психика выбрала держаться.</p><p><strong>Первый шаг.</strong> Вспомните, чего вы хотели до этих отношений. Одно желание, своё, не общее. Верните его в жизнь на этой неделе. Опора начинается там.</p>"}, "red": {"title": "Красный. В паре идёт война за то, кто сильнее", "html": "<p>Вы отмечали пункты про уступки, проверки и бурные примирения. Здесь мир поделён на сильного и слабого, и вы всё время держите позицию, чтобы не оказаться внизу.</p><p>Страсть на этом уровне настоящая. Цена тоже настоящая: вы живёте в постоянном напряжении и устаёте от него сильнее, чем от работы.</p><p><strong>Первый шаг.</strong> В ближайшей ссоре сделайте одну вещь: скажите, чего вы хотите, без обвинения и без ответного удара. Одна фраза без ярлыков меняет сцену быстрее любых доказательств.</p>"}, "blue": {"title": "Синий. Семья правильная и мёртвая", "html": "<p>Вы отмечали пункты про обязанности, детей и «так надо». Снаружи всё держится: роли понятны, дом стоит, люди уважаемые. Внутри вы давно соседи.</p><p>Этот уровень построен на долге. Долг хорошо держит конструкцию и плохо держит желание.</p><p><strong>Первый шаг.</strong> Один вечер на этой неделе проведите вдвоём без бытовых тем. Никаких детей, денег и планов. Вы удивитесь, сколько всплывёт живого и как трудно будет молчать о делах.</p>"}, "orange": {"title": "Оранжевый. Партнёр стал проектом", "html": "<p>Вы отмечали пункты про рост, отдачу и соответствие уровню. Отношения оцениваются как вложение: что я вкладываю, что получаю, кто из нас растёт быстрее.</p><p>Такой взгляд отлично работает в деле и разрушает пару. Живой человек не даёт отдачи по графику и не обязан быть вашим достижением.</p><p><strong>Первый шаг.</strong> Спросите партнёра о том, чего он боится. Не про цели и планы, про страх. Ответ покажет вам человека, которого вы давно меряли результатами.</p>"}, "green": {"title": "Зелёный. Близость есть, полярности нет", "html": "<p>Вы отмечали пункты про разговоры, бережность и пропавшее желание. Вы научились слышать друг друга, и это настоящая ценность. Вместе с ней ушло напряжение, из которого рождается влечение.</p><p>Дружба и уважение никуда не денутся. Страсть требует разницы, а вы её выровняли до нуля.</p><p><strong>Первый шаг.</strong> Верните в пару одну зону, где вы разные: спор без сглаживания, свидание с правилами, роль, которую вы обычно не берёте. Полярность возвращается через различие.</p>"}, "overload": {"title": "Перегруз. Вы узнали себя почти везде", "html": "<p>Вы отметили больше двух третей пунктов. Это не значит, что у вас всё плохо. Это значит, что в паре одновременно работает несколько сценариев, и по одному их не разобрать.</p><p>Так бывает, когда человек долго тянет и на разрыв, и на терпение сразу: то воюет, то подстраивается, то живёт по долгу.</p><p><strong>Первый шаг.</strong> Не чините всё сразу. Выберите одну сцену, которая повторяется чаще других, и разберите её. На эфире я показываю, как это делается.</p>"}}, "order": ["beige", "violet", "red", "blue", "orange", "green"], "support": 0.7, "overload": 25, "total": 36, "pages": 6};
+const boxes = [...document.querySelectorAll('#items input')];
+const pages = [...document.querySelectorAll('.page')];
+const go = document.getElementById('go');
+const back = document.getElementById('back');
+const bar = document.getElementById('bar');
+const stepLabel = document.getElementById('step');
+let cur = 0;
+
+function show() {
+  pages.forEach((p, i) => p.classList.toggle('on', i === cur));
+  bar.style.width = ((cur + 1) / pages.length * 100) + '%';
+  stepLabel.textContent = 'Страница ' + (cur + 1) + ' из ' + pages.length;
+  back.hidden = cur === 0;
+  go.textContent = cur === pages.length - 1 ? 'Показать результат' : 'Дальше';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+show();
+back.onclick = () => { if (cur > 0) { cur--; show(); } };
+
+const finish = () => {
+  const score = {}; D.order.forEach(l => score[l] = 0);
+  let checked = 0;
+  boxes.forEach(b => { if (b.checked) { score[b.dataset.level]++; checked++; } });
+  const out = document.getElementById('out');
+  if (!checked) {
+    out.innerHTML = '<h2>Ни одного отмеченного пункта</h2><p>Пройдите ещё раз и отмечайте всё, ' +
+      'в чём узнаёте себя хотя бы наполовину. Честные ответы дают точный результат.</p>';
+  } else {
+    const ranked = D.order.slice().sort((a, b) => score[b] - score[a] ||
+      D.order.indexOf(a) - D.order.indexOf(b));
+    const lead = checked >= D.overload ? 'overload' : ranked[0];
+    const second = ranked[1];
+    const r = D.results[lead];
+    let html = '<h2>' + r.title + '</h2><p class="score">Отмечено ' + checked + ' из ' +
+      D.total + '</p>' + r.html;
+    if (lead !== 'overload' && score[second] >= score[ranked[0]] * D.support && score[second] > 0) {
+      html += '<div class="support"><h2>Вторым слоем: ' + D.results[second].title + '</h2>' +
+        D.results[second].html + '</div>';
+    }
+    html += '<div class="cta"><strong>25 августа в 19:00</strong> я разбираю эти уровни вживую: ' +
+      'где стоит ваша пара, почему вас не слышат и что делать следующим шагом.</div>';
+    out.innerHTML = html;
+  }
+  document.getElementById('items').style.display = 'none';
+  document.getElementById('nav').style.display = 'none';
+  document.querySelector('.bar').style.display = 'none';
+  stepLabel.style.display = 'none';
+  out.style.display = 'block';
+  out.scrollIntoView({behavior: 'smooth'});
+};
+
+go.onclick = () => {
+  if (cur < pages.length - 1) { cur++; show(); return; }
+  finish();
+};
+</script></body></html>
