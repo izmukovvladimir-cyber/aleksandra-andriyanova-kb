@@ -11,13 +11,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700&display=swap">
 <style>
 :root{
-  --paper:#F6EFE3; --paper2:#EFE5D4; --sheet:#FFFCF6; --ink:#3A2A22; --muted:#7D6A5D;
-  --line:#E2D4BF; --accent:#B5654A; --accent-d:#97503A; --rose:#E9CFC2; --ok:#5E7F5A;
+  --paper:#F8F0EC; --paper2:#F1E2E3; --sheet:#FFFCFA; --ink:#3A2A2E; --muted:#7D6670;
+  --line:#E8D3DA; --accent:#D6336C; --accent-d:#B5245A; --rose:#F6D3DE; --ok:#5E7F5A;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{background:var(--paper);color:var(--ink);font:17px/1.6 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh;
-  background-image:radial-gradient(circle at 15% 10%,rgba(233,207,194,.55),transparent 45%),radial-gradient(circle at 90% 85%,rgba(233,207,194,.4),transparent 40%)}
+  background-image:radial-gradient(circle at 15% 10%,rgba(246,211,222,.8),transparent 45%),radial-gradient(circle at 90% 85%,rgba(246,211,222,.6),transparent 40%)}
 a{color:inherit}
 .wrap{max-width:640px;margin:0 auto;padding:22px 16px 60px}
 .top{display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
@@ -54,13 +54,13 @@ details.ex p{font-family:Lora,serif;font-style:italic;margin-top:8px;padding-lef
 textarea{width:100%;min-height:150px;font:400 18px/1.6 Lora,serif;color:var(--ink);background:
   repeating-linear-gradient(to bottom,transparent 0,transparent 28.3px,var(--line) 28.3px,var(--line) 29.3px) local,var(--sheet);
   border:1.5px solid var(--line);border-radius:14px;padding:10px 14px;resize:vertical}
-textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(181,101,74,.15)}
+textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(214,51,108,.15)}
 .nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px;flex-wrap:wrap}
 .nav .r{display:flex;gap:8px;margin-left:auto}
 /* letter */
 .sheet{position:relative;background:var(--sheet);border-radius:6px;padding:38px 26px 34px 34px;margin:6px 0 22px;
   box-shadow:0 1px 0 var(--line),0 18px 40px -20px rgba(58,42,34,.45);
-  background-image:linear-gradient(to right,transparent 22px,rgba(181,101,74,.35) 22px,rgba(181,101,74,.35) 23.5px,transparent 23.5px)}
+  background-image:linear-gradient(to right,transparent 22px,rgba(214,51,108,.35) 22px,rgba(214,51,108,.35) 23.5px,transparent 23.5px)}
 .sheet:before{content:"";position:absolute;inset:auto 10px -8px 10px;height:16px;background:var(--paper2);border-radius:0 0 6px 6px;z-index:-1}
 .letter{font-family:Lora,serif;font-size:18px;line-height:1.75;white-space:pre-wrap;word-wrap:break-word}
 .letter .sig{font-family:Caveat,cursive;font-size:30px;color:var(--accent);line-height:1.3}
@@ -69,8 +69,8 @@ textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba
 h3.hand{font-size:40px;margin:40px 0 12px}
 .tips .t{background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:12px}
 .tips b{display:block;font-size:16px;margin-bottom:4px}
-.tips p{font-size:16px;color:#5a4a40}
-.safe{background:#F3E1DA;border:1px solid var(--rose);border-radius:16px;padding:16px 18px;font-size:15px;margin:16px 0}
+.tips p{font-size:16px;color:#5a4650}
+.safe{background:#FBE3EA;border:1px solid var(--rose);border-radius:16px;padding:16px 18px;font-size:15px;margin:16px 0}
 .safe a{font-weight:700;color:var(--accent-d)}
 .after li{font-family:Lora,serif;font-size:18px;margin:0 0 8px 22px}
 .next{margin-top:34px;text-align:center;background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:26px 20px}
@@ -86,7 +86,7 @@ h3.hand{font-size:40px;margin:40px 0 12px}
 
   <!-- intro -->
   <section id="intro">
-    <div class="env"><svg width="84" height="58" viewBox="0 0 84 58" fill="none"><rect x="1.5" y="1.5" width="81" height="55" rx="6" fill="#FFFCF6" stroke="#B5654A" stroke-width="2"/><path d="M3 5l39 27L81 5" stroke="#B5654A" stroke-width="2" stroke-linejoin="round"/><path d="M42 40c-4-3-8-6-8-10a4 4 0 018-1 4 4 0 018 1c0 4-4 7-8 10z" fill="#E9CFC2"/></svg></div>
+    <div class="env"><svg width="84" height="58" viewBox="0 0 84 58" fill="none"><rect x="1.5" y="1.5" width="81" height="55" rx="6" fill="#FFFCF6" stroke="#D6336C" stroke-width="2"/><path d="M3 5l39 27L81 5" stroke="#D6336C" stroke-width="2" stroke-linejoin="round"/><path d="M42 40c-4-3-8-6-8-10a4 4 0 018-1 4 4 0 018 1c0 4-4 7-8 10z" fill="#F6D3DE"/></svg></div>
     <h1 class="hand">Письмо партнёру</h1>
     <p class="sub">Когда трудно сказать вслух</p>
     <p class="lead">Бывает, внутри уже целый разговор. А рядом с партнёром получается только «ничего» или очередная ссора. Письмо даёт время подобрать слова и сказать о том, что для тебя важно.</p>
@@ -94,6 +94,7 @@ h3.hand{font-size:40px;margin:40px 0 12px}
     <div class="priv"><span>🔒</span><span>Твои ответы видишь только ты. Они хранятся в этом браузере и никуда не отправляются.</span></div>
     <button class="btn" id="start">Начать письмо</button>
     <button class="btn link hidden" id="toLetter">Открыть моё письмо</button>
+    <p style="margin-top:14px;font-size:15px">Хочешь писать от руки? <a href="/guide-pismo-partneru/pismo-partneru-shablon.pdf" download="Письмо партнёру. Шаблон.pdf" style="color:var(--accent);font-weight:600">Скачай пустой шаблон в PDF</a>, его можно распечатать или сохранить в телефон.</p>
   </section>
 
   <!-- steps -->
@@ -119,7 +120,7 @@ h3.hand{font-size:40px;margin:40px 0 12px}
     <div class="sheet"><div class="letter" id="letter"></div></div>
     <div class="acts">
       <button class="btn" id="copy">Скопировать письмо</button>
-      <button class="btn ghost" id="share">Отправить</button>
+      <a class="btn ghost" id="dl" href="/guide-pismo-partneru/pismo-partneru-shablon.pdf" download="Письмо партнёру. Шаблон.pdf">Скачать пустой шаблон</a>
       <button class="btn ghost" id="edit">Изменить ответы</button>
     </div>
     <div class="toast" id="toast"></div>
@@ -194,8 +195,6 @@ function toast(t){$("toast").textContent=t;setTimeout(function(){$("toast").text
 function copy(t){if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t);}
  return new Promise(function(ok,no){var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");ok();}catch(e){no(e);}document.body.removeChild(ta);});}
 $("copy").onclick=function(){copy(build().txt).then(function(){toast("Скопировано. Вставь письмо в заметки или в сообщение.");},function(){toast("Не получилось скопировать, выдели текст письма вручную.");});};
-$("share").onclick=function(){var t=build().txt;if(navigator.share){navigator.share({text:t}).catch(function(){});}
- else{window.open("https://t.me/share/url?url="+encodeURIComponent(" ")+"&text="+encodeURIComponent(t),"_blank","noopener");}};
 })();
 </script>
 </body>
