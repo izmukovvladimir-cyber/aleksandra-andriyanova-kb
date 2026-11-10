@@ -82,6 +82,13 @@ h3.hand{font-size:40px;margin:40px 0 12px}
 .handnote p:last-child{margin-bottom:0}
 .handnote .hn-sign{font-family:Caveat,cursive;font-size:24px;color:var(--accent-d);text-align:right}
 .handnote a{color:var(--accent);font-weight:600}
+details.sample{margin:4px 0 8px}
+details.sample summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--accent);background:rgba(255,255,255,.6);border:1.5px solid var(--rose);border-radius:999px;padding:10px 16px;font-size:15px}
+details.sample summary::-webkit-details-marker{display:none}
+details.sample summary:before{content:"+";font-size:18px;line-height:1}
+details.sample[open] summary:before{content:"−"}
+details.sample .sheet{margin-top:14px}
+details.sample .cap{font-size:14px;color:var(--muted);margin-top:4px}
 .hidden{display:none!important}
 @media (max-width:420px){h1.hand{font-size:54px}.card{padding:20px 16px 16px}.sheet{padding:30px 16px 28px 28px}.btn{padding:14px 18px}}
 </style>
@@ -97,6 +104,25 @@ h3.hand{font-size:40px;margin:40px 0 12px}
     <p class="sub">Когда трудно сказать вслух</p>
     <p class="lead">Бывает, внутри уже целый разговор. А рядом с ней получается только «ничего» или очередная ссора. Письмо даёт время подобрать слова и сказать о том, что для тебя важно.</p>
     <p class="p">Выбери одну тему. Дальше восемь коротких шагов: под каждым подсказка, пример и начало фразы, которое можно стереть. В конце из твоих ответов сложится готовое письмо. Первую версию можно оставить только для себя, отправлять письмо необязательно.</p>
+    <details class="sample"><summary>Посмотреть пример письма</summary>
+      <p class="cap">Так может выглядеть письмо о простой бытовой ситуации: промолчал, ушёл в другую комнату, а на самом деле был тяжёлый день.</p>
+      <div class="sheet"><div class="letter">Любимая,
+
+Я решил написать тебе, потому что мне бывает трудно объяснить, что со мной происходит. В разговоре я замолкаю, а важное так и остаётся невысказанным.
+
+Мне дороги наши отношения. Я вспоминаю, как мы недавно гуляли вдвоём и разговаривали обо всём подряд. Мне было хорошо с тобой. Хочется чаще находить для нас такое время.
+
+Вчера, когда ты спросила, что со мной, я ответил «ничего» и ушёл в другую комнату. На самом деле я был расстроен из-за работы и не понимал, как об этом рассказать. Мне было трудно признаться, что я растерян.
+
+Я понимаю, что по моему молчанию тебе сложно догадаться, что происходит. Хочу попробовать говорить прямо: «У меня тяжёлый день. Мне нужно немного времени, потом я смогу поговорить».
+
+А ещё мне хочется иногда делиться с тобой тем, что тревожит. Могу я попросить тебя сначала просто выслушать меня? Потом мы сможем вместе подумать, нужен ли мне совет.
+
+Мне важно услышать и тебя. Как ты чувствуешь себя рядом со мной? Чего тебе сейчас не хватает?
+
+Давай выберем вечер и спокойно поговорим. Я соскучился по тебе.<div class="sig">
+Обнимаю.</div></div></div>
+    </details>
     <div class="priv"><span>🔒</span><span>Твои ответы видишь только ты. Они хранятся в этом браузере и никуда не отправляются.</span></div>
     <button class="btn" id="start">Начать письмо</button>
     <button class="btn link hidden" id="toLetter">Открыть моё письмо</button>
