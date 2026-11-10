@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Письмо любимой: когда трудно сказать вслух</title>
+<meta name="description" content="Шаблон письма по шагам: что ценю, что случилось, что я почувствовал, о чём прошу. Заполняешь прямо на странице, и в конце получается готовое письмо.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --paper:#F8F0EC; --paper2:#F1E2E3; --sheet:#FFFCFA; --ink:#3A2A2E; --muted:#7D6670;
+  --line:#E8D3DA; --accent:#D6336C; --accent-d:#B5245A; --rose:#F6D3DE; --ok:#5E7F5A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:17px/1.6 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh;
+  background-image:radial-gradient(circle at 15% 10%,rgba(246,211,222,.8),transparent 45%),radial-gradient(circle at 90% 85%,rgba(246,211,222,.6),transparent 40%)}
+a{color:inherit}
+.wrap{max-width:640px;margin:0 auto;padding:22px 16px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+.top a{text-decoration:none;font-weight:600}
+.top a:hover{color:var(--accent)}
+.hand{font-family:Caveat,cursive;font-weight:700;color:var(--accent);line-height:1}
+h1.hand{font-size:64px;margin-bottom:6px}
+.sub{font-family:Lora,serif;font-style:italic;font-size:21px;color:var(--muted);margin-bottom:26px}
+.lead{font-family:Lora,serif;font-size:19px;line-height:1.65;margin-bottom:18px}
+.p{margin-bottom:14px}
+.priv{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);background:rgba(255,255,255,.55);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;margin:22px 0 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px/1 Manrope,sans-serif;padding:15px 22px;border-radius:999px;border:0;cursor:pointer;background:var(--accent);color:#FFF8F2;text-decoration:none;transition:background .15s,transform .15s}
+.btn:hover{background:var(--accent-d)}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn.link{background:none;color:var(--muted);padding:15px 6px;text-decoration:underline;text-underline-offset:3px}
+.env{width:84px;height:58px;margin:0 0 22px;position:relative}
+.env svg{display:block}
+/* steps */
+.prog{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-size:13px;color:var(--muted);font-weight:600}
+.bar{flex:1;height:6px;background:var(--paper2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .3s}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:24px 20px 20px;box-shadow:0 10px 30px -18px rgba(58,42,34,.35)}
+.card h2{font-family:Lora,serif;font-weight:500;font-size:24px;line-height:1.3;margin-bottom:8px}
+.opt{display:inline-block;font-size:12px;font-weight:600;color:var(--ok);background:rgba(94,127,90,.12);border-radius:99px;padding:3px 10px;margin-bottom:10px}
+.hint{color:var(--muted);font-size:16px;margin-bottom:12px}
+details.ex{margin-bottom:14px;font-size:15px}
+details.ex summary{cursor:pointer;color:var(--accent);font-weight:600;list-style:none}
+details.ex summary::-webkit-details-marker{display:none}
+details.ex summary:before{content:"+ "}
+details.ex[open] summary:before{content:"− "}
+details.ex p{font-family:Lora,serif;font-style:italic;margin-top:8px;padding-left:12px;border-left:3px solid var(--rose)}
+textarea{width:100%;min-height:150px;font:400 18px/1.6 Lora,serif;color:var(--ink);background:
+  repeating-linear-gradient(to bottom,transparent 0,transparent 28.3px,var(--line) 28.3px,var(--line) 29.3px) local,var(--sheet);
+  border:1.5px solid var(--line);border-radius:14px;padding:10px 14px;resize:vertical}
+textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(214,51,108,.15)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px;flex-wrap:wrap}
+.nav .r{display:flex;gap:8px;margin-left:auto}
+/* letter */
+.sheet{position:relative;background:var(--sheet);border-radius:6px;padding:38px 26px 34px 34px;margin:6px 0 22px;
+  box-shadow:0 1px 0 var(--line),0 18px 40px -20px rgba(58,42,34,.45);
+  background-image:linear-gradient(to right,transparent 22px,rgba(214,51,108,.35) 22px,rgba(214,51,108,.35) 23.5px,transparent 23.5px)}
+.sheet:before{content:"";position:absolute;inset:auto 10px -8px 10px;height:16px;background:var(--paper2);border-radius:0 0 6px 6px;z-index:-1}
+.letter{font-family:Lora,serif;font-size:18px;line-height:1.75;white-space:pre-wrap;word-wrap:break-word}
+.letter .sig{font-family:Caveat,cursive;font-size:30px;color:var(--accent);line-height:1.3}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+.toast{font-size:14px;color:var(--ok);font-weight:600;min-height:22px}
+h3.hand{font-size:40px;margin:40px 0 12px}
+.tips .t{background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:12px}
+.tips b{display:block;font-size:16px;margin-bottom:4px}
+.tips p{font-size:16px;color:#5a4650}
+.safe{background:#FBE3EA;border:1px solid var(--rose);border-radius:16px;padding:16px 18px;font-size:15px;margin:16px 0}
+.safe a{font-weight:700;color:var(--accent-d)}
+.after li{font-family:Lora,serif;font-size:18px;margin:0 0 8px 22px}
+.next{margin-top:34px;text-align:center;background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:26px 20px}
+.next p{color:var(--muted);margin:8px 0 18px}
+.foot{margin-top:30px;text-align:center;font-size:13px;color:var(--muted)}
+.handnote{position:relative;background:var(--sheet);border:1.5px solid var(--rose);border-left:5px solid var(--accent);border-radius:16px;padding:18px 18px 16px;margin:22px 0 6px;box-shadow:0 10px 26px -18px rgba(214,51,108,.45)}
+.handnote .hn-t{font-family:Caveat,cursive;font-weight:700;font-size:32px;color:var(--accent);line-height:1.05;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.handnote p{font-family:Lora,serif;font-size:17px;line-height:1.65;margin-bottom:10px}
+.handnote p:last-child{margin-bottom:0}
+.handnote .hn-sign{font-family:Caveat,cursive;font-size:24px;color:var(--accent-d);text-align:right}
+.handnote a{color:var(--accent);font-weight:600}
+.hidden{display:none!important}
+@media (max-width:420px){h1.hand{font-size:54px}.card{padding:20px 16px 16px}.sheet{padding:30px 16px 28px 28px}.btn{padding:14px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a href="/">Александра Андриянова</a><span>Ревизия отношений</span></div>
+
+  <!-- intro -->
+  <section id="intro">
+    <div class="env"><svg width="84" height="58" viewBox="0 0 84 58" fill="none"><rect x="1.5" y="1.5" width="81" height="55" rx="6" fill="#FFFCF6" stroke="#D6336C" stroke-width="2"/><path d="M3 5l39 27L81 5" stroke="#D6336C" stroke-width="2" stroke-linejoin="round"/><path d="M42 40c-4-3-8-6-8-10a4 4 0 018-1 4 4 0 018 1c0 4-4 7-8 10z" fill="#F6D3DE"/></svg></div>
+    <h1 class="hand">Письмо любимой</h1>
+    <p class="sub">Когда трудно сказать вслух</p>
+    <p class="lead">Бывает, внутри уже целый разговор. А рядом с ней получается только «ничего» или очередная ссора. Письмо даёт время подобрать слова и сказать о том, что для тебя важно.</p>
+    <p class="p">Выбери одну тему. Дальше восемь коротких шагов: под каждым подсказка, пример и начало фразы, которое можно стереть. В конце из твоих ответов сложится готовое письмо. Первую версию можно оставить только для себя, отправлять письмо необязательно.</p>
+    <div class="handnote">
+      <div class="hn-t"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D6336C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>Важно: перепиши письмо от руки</div>
+      <p>Собери письмо здесь, на странице, а потом перепиши его ручкой на бумагу. Я очень рекомендую сделать именно так.</p>
+      <p>Когда пишешь рукой, ты замедляешься и проживаешь каждое слово. В таком письме больше твоей энергии, и она это чувствует: лист, написанный твоей рукой, читается совсем по-другому.</p>
+      <p>Для этого есть <a href="/guide-pismo-lyubimoy/pismo-lyubimoy-shablon.pdf" download="Письмо любимой. Шаблон.pdf">пустой шаблон в PDF</a>. Его можно распечатать или взять свой красивый лист.</p>
+      <p class="hn-sign">Александра</p>
+    </div>
+    <div class="priv"><span>🔒</span><span>Твои ответы видишь только ты. Они хранятся в этом браузере и никуда не отправляются.</span></div>
+    <button class="btn" id="start">Начать письмо</button>
+    <button class="btn link hidden" id="toLetter">Открыть моё письмо</button>
+    <p style="margin-top:14px;font-size:15px">Есть версия для женщин: <a href="/guide-pismo-partneru/" style="color:var(--accent);font-weight:600">«Письмо партнёру»</a>. Можно предложить любимой написать тебе в ответ.</p>
+  </section>
+
+  <!-- steps -->
+  <section id="steps" class="hidden">
+    <div class="prog"><span id="cnt">Шаг 1 из 9</span><div class="bar"><i id="bar"></i></div></div>
+    <div class="card">
+      <span class="opt hidden" id="opt">можно пропустить</span>
+      <h2 id="sh"></h2>
+      <p class="hint" id="shint"></p>
+      <details class="ex" id="sexw"><summary>Показать пример</summary><p id="sex"></p></details>
+      <textarea id="sta" rows="5"></textarea>
+      <div class="nav">
+        <button class="btn ghost" id="back">Назад</button>
+        <div class="r"><button class="btn link hidden" id="skip">Пропустить</button><button class="btn" id="next">Дальше</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- result -->
+  <section id="result" class="hidden">
+    <h1 class="hand" style="font-size:52px">Твоё письмо</h1>
+    <p class="p" style="color:var(--muted)">Перечитай его вслух. Если какую-то фразу ты бы не сказал лично, поправь её своими словами. А когда текст готов, перепиши его от руки на бумагу.</p>
+    <div class="sheet"><div class="letter" id="letter"></div></div>
+    <div class="acts">
+      <button class="btn" id="copy">Скопировать письмо</button>
+      <a class="btn ghost" id="dl" href="/guide-pismo-lyubimoy/pismo-lyubimoy-shablon.pdf" download="Письмо любимой. Шаблон.pdf">Скачать пустой шаблон</a>
+      <button class="btn ghost" id="edit">Изменить ответы</button>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <h3 class="hand">Как передать письмо</h3>
+    <div class="tips">
+      <div class="t"><b>Сначала перечитай его для себя</b><p>Здесь понятно, что случилось, что ты чувствуешь и чего хочешь? Есть одна конкретная просьба? Убери догадки о её мотивах: «ты специально меня игнорируешь» лучше заменить описанием ситуации. Если в черновике накопилось всё за несколько лет, сохрани его для себя, а для первого письма выбери одну тему.</p></div>
+      <div class="t"><b>Выбери подходящий момент</b><p>Можно сказать: «Я написал тебе кое-что важное. Когда тебе будет удобно спокойно прочитать?» Передай письмо тогда, когда у вас обоих будет возможность вернуться к разговору.</p></div>
+      <div class="t"><b>Оставь место для ответа</b><p>Она может согласиться, растеряться, не согласиться или попросить время. Обсудите, когда вернётесь к теме. Если разговор становится слишком напряжённым, можно сделать паузу и договориться о продолжении.</p></div>
+    </div>
+
+    <h3 class="hand">После письма</h3>
+    <ul class="after">
+      <li>Что стало яснее о моих чувствах и желаниях?</li>
+      <li>О чём мы договорились или к какому вопросу хотим вернуться?</li>
+    </ul>
+
+    <div class="next">
+      <div class="hand" style="font-size:34px">Следующий шаг</div>
+      <p>Письмо помогает начать разговор. Дальше важно услышать ответ и понять, о чём вы оба готовы договариваться. Если хочешь разобрать свою ситуацию лично, напиши мне.</p>
+      <a class="btn" href="https://t.me/Aleksandra_Andriyanova" target="_blank" rel="noopener">Написать Александре</a>
+      <p style="margin:16px 0 0"><a href="/">Другие материалы</a></p>
+    </div>
+  </section>
+
+  <div class="foot">© Александра Андриянова · <a href="/">aleksandra-andriyanova.ru</a></div>
+</div>
+
+<script>
+(function(){
+var S=[
+ {r:"greet",h:"Как ты к ней обращаешься?",hint:"Как ты называешь её, когда вам хорошо: по имени или тёплым словом.",ex:"Любимая",st:"",ph:"Например: Любимая"},
+ {h:"Что я ценю в наших отношениях",opt:1,hint:"Вспомни конкретный момент, в котором тебе было хорошо рядом с ней. Если сейчас не хочется писать о благодарности, этот шаг можно пропустить.",ex:"Я с теплом вспоминаю субботу, когда мы гуляли и ты рассказывала о своей работе. Я чувствовал, что мы рядом.",st:"Я с теплом вспоминаю ",af:"Мне хочется, чтобы у нас было больше таких моментов."},
+ {h:"О какой ситуации я хочу поговорить",hint:"Опиши один эпизод: что произошло, что было сказано или сделано. Без «ты всегда» и «ты никогда».",ex:"Вчера за ужином я начал рассказывать о своём дне, а ты продолжила смотреть видео.",st:"Сейчас мне хочется поговорить об одной ситуации: "},
+ {h:"Что я тогда почувствовал",hint:"Например: грусть, одиночество, злость, растерянность, нежность. Выбери свои слова.",ex:"В тот момент мне стало грустно и одиноко.",st:"В тот момент я почувствовал "},
+ {h:"Чего мне хочется",hint:"Внимания, совместного времени, поддержки, прикосновений, ясности? Что это означает именно для тебя?",ex:"Мне хотелось твоего внимания и возможности поделиться тем, что для меня важно.",st:"Мне важно "},
+ {h:"Что трудно мне самому",opt:1,hint:"Если хочешь, скажи о своей части. Это снимает с письма тон претензии.",ex:"Я замечаю, что часто замолкаю, а потом отвечаю резко. Хочу учиться говорить раньше, когда мне чего-то не хватает.",st:"Я замечаю, что мне самому трудно "},
+ {h:"О чём конкретно я хочу попросить",hint:"Один посильный шаг и подходящее время. «Будь внимательнее» каждый понимает по-своему, а «давай поговорим двадцать минут без телефонов» описывает действие, о котором можно договориться.",ex:"Давай сегодня после ужина отложим телефоны на двадцать минут и побудем вдвоём?",st:"У меня есть просьба: ",af:"Как ты к этому относишься? Если такой вариант тебе не подходит, давай подумаем, какой устроит нас обоих."},
+ {h:"Что я сам готов предложить",hint:"Только то, на что ты действительно согласен.",ex:"Я готов тоже отложить телефон и спокойно послушать, как ты.",st:"Со своей стороны я готов "},
+ {r:"close",h:"Как ты закончишь письмо?",hint:"Твои слова в конце и подпись.",ex:"Обнимаю тебя. Твой Миша",st:"",ph:"Например: Обнимаю тебя"}
+];
+var INTRO="Я решил написать тебе, потому что мне непросто начать этот разговор вслух. Мне важно рассказать, что со мной происходит, и услышать тебя.";
+var BEFORE="Можешь прочитать и немного подумать. Давай выберем время, когда сможем спокойно поговорить. Когда тебе было бы удобно?";
+var KEY="lt-pismo-lyubimoy-v1",A=S.map(function(s){return s.st||"";}),cur=0;
+try{var sv=JSON.parse(localStorage.getItem(KEY)||"null");if(sv&&sv.a&&sv.a.length===S.length){A=sv.a;cur=sv.c||0;}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({a:A,c:cur}));}catch(e){}}
+var $=function(id){return document.getElementById(id);};
+function show(id){["intro","steps","result"].forEach(function(x){$(x).classList.toggle("hidden",x!==id);});window.scrollTo({top:0,behavior:"smooth"});}
+function filled(i){var v=(A[i]||"").trim();return v&&v!==(S[i].st||"").trim()?v:"";}
+if(A.some(function(_,i){return filled(i);})){$("toLetter").classList.remove("hidden");$("start").textContent="Продолжить письмо";}
+function render(){var s=S[cur];$("cnt").textContent="Шаг "+(cur+1)+" из "+S.length;$("bar").style.width=((cur+1)/S.length*100)+"%";
+ $("sh").textContent=s.h;$("shint").textContent=s.hint;$("sex").textContent=s.ex;$("sexw").open=false;
+ $("opt").classList.toggle("hidden",!s.opt);$("skip").classList.toggle("hidden",!s.opt);
+ var ta=$("sta");ta.value=A[cur];ta.placeholder=s.ph||"";$("back").style.visibility=cur?"visible":"hidden";
+ $("next").textContent=cur===S.length-1?"Собрать письмо":"Дальше";
+ setTimeout(function(){ta.focus();try{ta.setSelectionRange(ta.value.length,ta.value.length);}catch(e){}},60);}
+function build(){var head="",body=[],close="";S.forEach(function(s,i){var v=filled(i);if(!v)return;
+ if(s.r==="greet"){head=v.replace(/[,.!\s]+$/,"")+",";return;}
+ if(s.r==="close"){close=v;return;}
+ if(!/[.!?…»)]$/.test(v))v+=".";if(s.af)v+=" "+s.af;body.push(v);});
+ var out=[];if(head)out.push(head);out.push(INTRO);out=out.concat(body);if(body.length)out.push(BEFORE);return {txt:out.join("\n\n")+(close?"\n\n"+close:""),close:close,main:out.join("\n\n")};}
+function result(){var b=build(),L=$("letter");L.textContent=b.main;if(b.close){var d=document.createElement("div");d.className="sig";d.textContent="\n"+b.close;L.appendChild(d);}show("result");}
+$("start").onclick=function(){show("steps");render();};
+$("toLetter").onclick=result;
+$("sta").addEventListener("input",function(){A[cur]=this.value;save();});
+$("next").onclick=function(){A[cur]=$("sta").value;if(cur<S.length-1){cur++;save();render();window.scrollTo({top:0,behavior:"smooth"});}else{save();result();}};
+$("skip").onclick=function(){A[cur]=S[cur].st||"";if(cur<S.length-1){cur++;save();render();}else result();};
+$("back").onclick=function(){A[cur]=$("sta").value;if(cur>0){cur--;save();render();}};
+$("edit").onclick=function(){cur=0;show("steps");render();};
+function toast(t){$("toast").textContent=t;setTimeout(function(){$("toast").textContent="";},2200);}
+function copy(t){if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t);}
+ return new Promise(function(ok,no){var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");ok();}catch(e){no(e);}document.body.removeChild(ta);});}
+$("copy").onclick=function(){copy(build().txt).then(function(){toast("Скопировано. Вставь письмо в заметки или в сообщение.");},function(){toast("Не получилось скопировать, выдели текст письма вручную.");});};
+})();
+</script>
+</body>
+</html>
