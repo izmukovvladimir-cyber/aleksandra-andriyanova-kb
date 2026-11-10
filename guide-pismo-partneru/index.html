@@ -1,277 +1,202 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Письмо партнёру: когда трудно сказать вслух</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"><style>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Письмо партнёру: когда трудно сказать вслух</title>
+<meta name="description" content="Шаблон письма по шагам: что ценю, что случилось, что я почувствовала, о чём прошу. Заполняешь прямо на странице, и в конце получается готовое письмо.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
 :root{
---accent:#c98a6b;--accent-ink:#2a1e17;--ink:#241a15;--offwhite:#ffffff;
---bg-light:#f8f1e9;--bg-dark:#1c1512;
---bg:var(--bg-light);--text:#1c1c1f;--muted:#6b7280;--surface:#ffffff;
---card-bg:rgba(0,0,0,.035);--card-border:rgba(0,0,0,.10);--hair:rgba(0,0,0,.08);
---dot:rgba(0,0,0,.05);--shadow:0 10px 30px rgba(0,0,0,.10);
---font-display:'Inter Tight',system-ui,sans-serif;
---font-body:'Inter',system-ui,-apple-system,sans-serif;
---font-mono:'JetBrains Mono',ui-monospace,monospace;
---font-serif:'PT Serif',Georgia,serif;
+  --paper:#F6EFE3; --paper2:#EFE5D4; --sheet:#FFFCF6; --ink:#3A2A22; --muted:#7D6A5D;
+  --line:#E2D4BF; --accent:#B5654A; --accent-d:#97503A; --rose:#E9CFC2; --ok:#5E7F5A;
 }
-:root[data-theme=dark]{
---bg:var(--bg-dark);--text:#f4f4f5;--muted:#9ca3af;--surface:#1a1a1c;
---card-bg:rgba(255,255,255,.05);--card-border:rgba(255,255,255,.12);--hair:rgba(255,255,255,.10);
---dot:rgba(255,255,255,.05);--shadow:0 10px 30px rgba(0,0,0,.45);
-}
-@media(prefers-color-scheme:dark){
-:root:not([data-theme=light]){
---bg:var(--bg-dark);--text:#f4f4f5;--muted:#9ca3af;--surface:#1a1a1c;
---card-bg:rgba(255,255,255,.05);--card-border:rgba(255,255,255,.12);--hair:rgba(255,255,255,.10);
---dot:rgba(255,255,255,.05);--shadow:0 10px 30px rgba(0,0,0,.45);
-}
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:17px/1.6 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh;
+  background-image:radial-gradient(circle at 15% 10%,rgba(233,207,194,.55),transparent 45%),radial-gradient(circle at 90% 85%,rgba(233,207,194,.4),transparent 40%)}
+a{color:inherit}
+.wrap{max-width:640px;margin:0 auto;padding:22px 16px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+.top a{text-decoration:none;font-weight:600}
+.top a:hover{color:var(--accent)}
+.hand{font-family:Caveat,cursive;font-weight:700;color:var(--accent);line-height:1}
+h1.hand{font-size:64px;margin-bottom:6px}
+.sub{font-family:Lora,serif;font-style:italic;font-size:21px;color:var(--muted);margin-bottom:26px}
+.lead{font-family:Lora,serif;font-size:19px;line-height:1.65;margin-bottom:18px}
+.p{margin-bottom:14px}
+.priv{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);background:rgba(255,255,255,.55);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;margin:22px 0 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px/1 Manrope,sans-serif;padding:15px 22px;border-radius:999px;border:0;cursor:pointer;background:var(--accent);color:#FFF8F2;text-decoration:none;transition:background .15s,transform .15s}
+.btn:hover{background:var(--accent-d)}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn.link{background:none;color:var(--muted);padding:15px 6px;text-decoration:underline;text-underline-offset:3px}
+.env{width:84px;height:58px;margin:0 0 22px;position:relative}
+.env svg{display:block}
+/* steps */
+.prog{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-size:13px;color:var(--muted);font-weight:600}
+.bar{flex:1;height:6px;background:var(--paper2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .3s}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:24px 20px 20px;box-shadow:0 10px 30px -18px rgba(58,42,34,.35)}
+.card h2{font-family:Lora,serif;font-weight:500;font-size:24px;line-height:1.3;margin-bottom:8px}
+.opt{display:inline-block;font-size:12px;font-weight:600;color:var(--ok);background:rgba(94,127,90,.12);border-radius:99px;padding:3px 10px;margin-bottom:10px}
+.hint{color:var(--muted);font-size:16px;margin-bottom:12px}
+details.ex{margin-bottom:14px;font-size:15px}
+details.ex summary{cursor:pointer;color:var(--accent);font-weight:600;list-style:none}
+details.ex summary::-webkit-details-marker{display:none}
+details.ex summary:before{content:"+ "}
+details.ex[open] summary:before{content:"− "}
+details.ex p{font-family:Lora,serif;font-style:italic;margin-top:8px;padding-left:12px;border-left:3px solid var(--rose)}
+textarea{width:100%;min-height:150px;font:400 18px/1.6 Lora,serif;color:var(--ink);background:
+  repeating-linear-gradient(to bottom,transparent 0,transparent 28.3px,var(--line) 28.3px,var(--line) 29.3px) local,var(--sheet);
+  border:1.5px solid var(--line);border-radius:14px;padding:10px 14px;resize:vertical}
+textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(181,101,74,.15)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px;flex-wrap:wrap}
+.nav .r{display:flex;gap:8px;margin-left:auto}
+/* letter */
+.sheet{position:relative;background:var(--sheet);border-radius:6px;padding:38px 26px 34px 34px;margin:6px 0 22px;
+  box-shadow:0 1px 0 var(--line),0 18px 40px -20px rgba(58,42,34,.45);
+  background-image:linear-gradient(to right,transparent 22px,rgba(181,101,74,.35) 22px,rgba(181,101,74,.35) 23.5px,transparent 23.5px)}
+.sheet:before{content:"";position:absolute;inset:auto 10px -8px 10px;height:16px;background:var(--paper2);border-radius:0 0 6px 6px;z-index:-1}
+.letter{font-family:Lora,serif;font-size:18px;line-height:1.75;white-space:pre-wrap;word-wrap:break-word}
+.letter .sig{font-family:Caveat,cursive;font-size:30px;color:var(--accent);line-height:1.3}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+.toast{font-size:14px;color:var(--ok);font-weight:600;min-height:22px}
+h3.hand{font-size:40px;margin:40px 0 12px}
+.tips .t{background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:12px}
+.tips b{display:block;font-size:16px;margin-bottom:4px}
+.tips p{font-size:16px;color:#5a4a40}
+.safe{background:#F3E1DA;border:1px solid var(--rose);border-radius:16px;padding:16px 18px;font-size:15px;margin:16px 0}
+.safe a{font-weight:700;color:var(--accent-d)}
+.after li{font-family:Lora,serif;font-size:18px;margin:0 0 8px 22px}
+.next{margin-top:34px;text-align:center;background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:26px 20px}
+.next p{color:var(--muted);margin:8px 0 18px}
+.foot{margin-top:30px;text-align:center;font-size:13px;color:var(--muted)}
+.hidden{display:none!important}
+@media (max-width:420px){h1.hand{font-size:54px}.card{padding:20px 16px 16px}.sheet{padding:30px 16px 28px 28px}.btn{padding:14px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a href="/">Александра Андриянова</a><span>Ревизия отношений</span></div>
 
-*{box-sizing:border-box}
-html,body{margin:0;background:var(--bg)}
-body{color:var(--text);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
-a{color:inherit;text-decoration:none}
-.mono{font-family:var(--font-mono)}
-/* ============ header ============ */
-.hd{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--hair)}
-.hd-in{height:66px;max-width:1340px;margin:0 auto;padding:0 44px;display:flex;align-items:center;gap:24px}
-.logo{font-family:var(--font-display);font-weight:700;font-size:19px;letter-spacing:-.04em;text-transform:uppercase;color:var(--text);display:inline-flex;align-items:center;flex:none;white-space:nowrap}
-.logo .sq{width:8px;height:8px;background:var(--accent);border:1.5px solid var(--ink);display:inline-block;margin:0 5px 0 3px}
-:root[data-theme=dark] .logo .sq{border-color:rgba(255,255,255,.7)}
-.hd-nav{display:flex;align-items:center;gap:22px;font-size:14px;flex:none}
-.hd-nav a{color:var(--muted);position:relative;padding:4px 1px;transition:color .15s;white-space:nowrap}
-.hd-nav a:hover{color:var(--text)}
-.hd-nav a.cur{color:var(--text);font-weight:600}
-.hd-nav a.cur::after{content:'';position:absolute;left:0;right:0;bottom:-3px;height:1.5px;background:var(--text);opacity:.8}
-.sp{flex:1}
-.tools{display:flex;align-items:center;gap:10px;flex:none}
-.tgl{width:34px;height:34px;border:1px solid var(--hair);border-radius:9px;display:grid;place-items:center;color:var(--text);background:none;cursor:pointer;padding:0;transition:border-color .15s}
-.tgl:hover{border-color:var(--muted)}
-.tgl svg{display:block;width:15px;height:15px}
-.tgl .ic-sun{display:none}
-:root[data-theme=dark] .tgl .ic-sun{display:block}
-:root[data-theme=dark] .tgl .ic-moon{display:none}
-.hd-btn{font-family:var(--font-display);font-size:14px;font-weight:600;padding:10px 17px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;background:var(--accent);color:var(--accent-ink);border:1.5px solid var(--ink);transition:transform .12s;flex:none}
-.hd-btn:hover{transform:translateY(-1px)}
-.hd-btn .ar{transition:transform .15s}
-.hd-btn:hover .ar{transform:translateX(3px)}
-:root[data-theme=dark] .hd-btn{border-color:var(--accent)}
-/* ============ shell ============ */
-.wrap{max-width:1340px;margin:0 auto;padding:0 44px 60px}
-.eyebrow{font-family:var(--font-mono);font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;color:var(--muted)}
-.eyebrow .dot{width:7px;height:7px;background:var(--accent);outline:1px solid var(--ink);display:inline-block;flex:none}
-:root[data-theme=dark] .eyebrow .dot{outline-color:rgba(255,255,255,.35)}
-/* ============ hero ============ */
-.hero{margin:26px 0 6px;border-radius:18px;overflow:hidden;background:var(--ink);color:#f5f5f0;position:relative;min-height:340px;display:flex}
-.hero .art{position:absolute;inset:0;background:var(--ink)}
-/* the dot-grid and the accent bloom are the fallback look while there is no cover image yet;
-   cover_css() turns them off as soon as site.hero_image is set (two of each only muddies it) */
-.hero .grid{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:11px 11px}
-.hero .glow{position:absolute;right:-90px;top:-90px;width:420px;height:420px;border-radius:50%;background:var(--accent);filter:blur(120px);opacity:.28}
-/* scrim keeps the copy on dark whatever the glow does behind it (on narrow screens the
-   glow otherwise floods the whole card and the title lands on bright lime) */
-.hero .txt{position:relative;z-index:2;padding:44px 44px 38px;display:flex;flex-direction:column;max-width:760px;
-background:linear-gradient(100deg,color-mix(in srgb,var(--ink) 88%,transparent) 0%,color-mix(in srgb,var(--ink) 55%,transparent) 62%,transparent 100%)}
-.hero .eyebrow{color:var(--accent)}
-/* hero is always the dark ink card, so its title must not follow --text (black on black in light theme) */
-.hero h1{font-family:var(--font-display);font-size:42px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin:18px 0 14px;max-width:17ch;color:#f5f5f0}
-.hero .desc{font-size:16px;line-height:1.55;color:rgba(245,245,240,.72);max-width:52ch;margin:0}
-.hero .read{margin-top:auto;padding-top:30px;display:inline-flex;align-items:center;gap:14px;color:#fbfbf8;cursor:pointer;align-self:flex-start}
-.hero .read .circ{width:46px;height:46px;border-radius:50%;background:var(--accent);display:grid;place-items:center;color:var(--accent-ink);flex:none;transition:transform .15s}
-.hero .read:hover .circ{transform:translateX(3px)}
-.hero .read .lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-/* ============ tabs ============ */
-/* grid, not flex-wrap: inline chips left a ragged right edge and one orphan on the
-   second row. auto-fit + minmax(240px) resolves to exactly 5 columns on a 1440 shell
-   (avail 1352px: 6 cols would need 240*6+8*5=1480), so 10 chips read as a deliberate
-   5+5 block. Narrow screens re-solve to 4/3/2 columns via the overrides below. */
-.tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px;margin:34px 0 0;padding-top:24px;border-top:1px solid var(--hair)}
-.tab{font-size:13px;font-weight:500;padding:9px 14px;border-radius:999px;border:1px solid var(--card-border);color:var(--muted);background:none;cursor:pointer;font-family:inherit;white-space:nowrap;transition:border-color .15s,color .15s;display:flex;align-items:center;justify-content:center;text-align:center;width:100%;min-width:0}
-.tab:hover{color:var(--text);border-color:var(--muted)}
-.tab.on{background:var(--accent);color:var(--accent-ink);border-color:var(--ink);font-weight:600}
-:root[data-theme=dark] .tab.on{border-color:var(--accent)}
-.count{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin:18px 0 14px}
-/* ============ cards ============ */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
-.card{border:1px solid var(--card-border);border-radius:14px;padding:18px;background:var(--card-bg);display:flex;flex-direction:column;gap:9px;min-height:158px;transition:border-color .15s,transform .15s}
-.card:hover{border-color:var(--ink);transform:translateY(-2px)}
-:root[data-theme=dark] .card:hover{border-color:var(--accent)}
-.card .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:7px}
-.card .tag .d{width:7px;height:7px;background:var(--accent);outline:1px solid var(--ink);display:inline-block;flex:none}
-:root[data-theme=dark] .card .tag .d{outline-color:rgba(255,255,255,.35)}
-.card .ct{font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.25;color:var(--text)}
-.card .cd{font-size:13.5px;color:var(--muted);line-height:1.5;flex:1;margin:0}
-.card .cm{font-family:var(--font-mono);font-size:10.5px;color:var(--muted)}
-.empty{font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--muted);padding:30px 0}
-/* ============ article ============ */
-.page{max-width:760px;margin:0 auto;padding:34px 44px 60px}
-.pcol{min-width:0}
-/* ============ toc: long guides only (4+ sections), shell adds .has-toc ============ */
-/* the reading column keeps the exact measure of a short guide (672px = 760 minus the
-   44px gutters), the menu hangs to its right and the pair is centered together, so a
-   long guide reads at the same width as a short one. */
-.page.has-toc{max-width:1180px;display:grid;grid-template-columns:minmax(0,672px) 200px;gap:44px;justify-content:center;align-items:start}
-/* padding-top 0 so «На странице» sits on the breadcrumb line of the article column */
-.toc{position:sticky;top:66px;align-self:start;max-height:calc(100vh - 96px);overflow-y:auto;font-size:12.5px;padding:0 0 24px}
-.toc .h{font-family:var(--font-mono);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;padding-left:13px}
-/* the marker gutter is always reserved (transparent border), so switching sections
-   recolors in place instead of nudging the text. NB: .toc scrolls on the y axis, which
-   makes the x axis a scroll box too, so a negative margin here would be clipped away. */
-.toc a{display:block;color:var(--muted);padding:5px 0 5px 11px;line-height:1.4;border-left:2px solid transparent;transition:color .15s,border-color .15s}
-.toc a:hover{color:var(--text)}
-.toc a.on{color:var(--text);font-weight:600;border-left-color:var(--accent)}
-.toc{scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.18) transparent}
-.toc::-webkit-scrollbar{width:5px}
-.toc::-webkit-scrollbar-track{background:transparent}
-.toc::-webkit-scrollbar-thumb{background:rgba(0,0,0,.18);border-radius:10px}
-:root[data-theme=dark] .toc{scrollbar-color:rgba(255,255,255,.2) transparent}
-:root[data-theme=dark] .toc::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18)}
-/* anchor lands below the sticky header, not under it */
-.sec h2[id]{scroll-margin-top:86px}
-/* no room for a side column: fall back to the plain reading page */
-@media(max-width:1100px){
-.page.has-toc{display:block;max-width:760px}
-.toc{display:none}
-}
-.bc{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.bc a:hover{color:var(--text)}
-h1{font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing:-.02em;line-height:1.12;margin:0 0 6px;color:var(--text)}
-.lead{font-family:var(--font-serif);font-size:20px;line-height:1.5;font-weight:700;color:var(--text);border-left:3px solid var(--accent);padding-left:18px;margin:20px 0 22px}
-.lead p{margin:0 0 10px}.lead p:last-child{margin-bottom:0}.lead ul{margin:0 0 10px;padding-left:22px}.lead li{margin:2px 0}
-.meta{font-family:var(--font-mono);font-size:11px;color:var(--muted);padding-bottom:20px;border-bottom:1px solid var(--hair);margin-bottom:26px}
-.how{border:1px solid var(--card-border);border-radius:12px;background:var(--surface);padding:16px 18px;margin:22px 0;font-size:14.5px;line-height:1.56;color:var(--text)}
-.p,.sec{border:1px solid var(--card-border);border-radius:14px;background:var(--card-bg);padding:20px;margin:18px 0}
-.p .num{display:inline-block;font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--accent-ink);background:var(--accent);border:1px solid var(--ink);padding:3px 10px;margin-bottom:10px}
-:root[data-theme=dark] .p .num{border-color:var(--accent)}
-.p h2{font-family:var(--font-display);font-size:20px;margin:0 0 6px;font-weight:700;letter-spacing:-.01em}
-.p .when{font-size:13.5px;color:var(--muted);margin:0 0 10px}
-.sec h2{font-family:var(--font-display);font-size:22px;margin:0 0 10px;font-weight:700;letter-spacing:-.015em}
-.sec h3{font-family:var(--font-display);font-size:17px;margin:18px 0 6px;font-weight:700}
-.sec p,.p p{font-size:15.5px;line-height:1.66;margin:10px 0}
-.sec ol,.sec ul{margin:8px 0;padding-left:22px;font-size:15.5px;line-height:1.66}
-.sec li{margin:0 0 7px}
-.sec li::marker{color:var(--muted)}
-.lblrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:14px 0 6px}
-.lbl{font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
-.box{font-family:var(--font-mono);font-size:12.5px;background:var(--surface);border:1px solid var(--hair);border-radius:10px;padding:14px 16px;white-space:pre-wrap;line-height:1.6;color:var(--text);overflow-x:auto}
-.copy{font-family:var(--font-mono);font-size:11px;color:var(--muted);background:none;border:1px solid var(--card-border);border-radius:8px;padding:6px 11px;cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s,background .15s}
-.copy:hover{color:var(--text);border-color:var(--muted)}
-.copy.done{background:var(--accent);color:var(--accent-ink);border-color:var(--ink);font-weight:600}
-.ex{font-size:14px;color:var(--muted);margin-top:12px}
-.ex b{color:var(--text)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
-.cardb{background:var(--surface);border:1px solid var(--card-border);border-radius:12px;padding:14px 16px}
-.cardb h3{font-family:var(--font-display);margin:0 0 6px;font-size:16px}
-.cardb ul,.cardb ol{padding-left:18px;margin:6px 0;font-size:14.5px}
-.cardb p{font-size:14.5px;margin:6px 0}
-.quote{font-family:var(--font-serif);font-style:italic;color:var(--text);opacity:.85;border-left:3px solid var(--accent);padding-left:14px;margin:14px 0;font-size:15.5px}
-.note{font-size:14.5px;line-height:1.56;color:var(--text);background:var(--surface);border:1px solid var(--card-border);border-left:3px solid var(--accent);border-radius:10px;padding:12px 16px;margin:14px 0}
-.linkbtn{display:inline-block;margin:12px 0 4px;font-weight:600;font-size:15px;color:var(--text);word-break:break-word;border-bottom:2px solid var(--accent)}
-.linkbtn:hover{opacity:.75}
-.mid{margin:26px 0;text-align:center}
-.mid a{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:999px;background:var(--ink);color:var(--offwhite);border:1px solid var(--ink)}
-:root[data-theme=dark] .mid a{background:var(--surface);border-color:var(--accent);color:var(--text)}
-/* ============ CTA ============ */
-.cta{margin:40px 0 6px;padding:30px 32px;border-radius:18px;background:var(--ink);color:#f5f5f0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:10px 10px}
-.cta .ttl{font-family:var(--font-display);font-size:25px;font-weight:700;letter-spacing:-.02em;margin:10px 0 6px}
-.cta .sub{font-size:14.5px;line-height:1.55;color:rgba(245,245,240,.68);margin:0 0 20px;max-width:60ch}
-.cta .eyebrow{color:var(--accent)}
-.cta-btn{font-family:var(--font-display);font-size:15px;font-weight:600;padding:13px 22px;border-radius:999px;background:var(--accent);color:var(--accent-ink);border:1px solid var(--accent);display:inline-flex;align-items:center;gap:9px}
-.cta-btn:hover{transform:translateY(-1px)}
-/* ============ footer ============ */
-.ft{border-top:1px solid var(--hair);background-image:radial-gradient(var(--dot) 1px,transparent 1px);background-size:9px 9px;padding:36px 0 26px}
-.ft-in{max-width:1340px;margin:0 auto;padding:0 44px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.ft-in .logo{font-size:17px}
-.ft-links{display:flex;gap:20px;font-size:13.5px;color:var(--text);opacity:.82}
-.ft-links a:hover{opacity:1}
-.ft-bot{max-width:1340px;margin:20px auto 0;padding:16px 44px 0;border-top:1px solid var(--hair);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.ft-bot a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-/* ============ responsive ============ */
-@media(max-width:900px){
-.hd-in,.wrap,.ft-in,.ft-bot{padding-left:20px;padding-right:20px}
-.page{padding:26px 20px 50px}
-/* narrow: the copy sits ON the artwork (no room to dodge it), so the scrim goes near-opaque
-   under the text and only clears near the bottom edge, where the art can breathe */
-.hero .txt{padding:30px 24px 26px;background:linear-gradient(180deg,color-mix(in srgb,var(--ink) 94%,transparent) 0%,color-mix(in srgb,var(--ink) 88%,transparent) 68%,color-mix(in srgb,var(--ink) 60%,transparent) 100%)}
-.hero .glow{width:240px;height:240px;right:-80px;top:-80px;opacity:.2}
-.hero h1{font-size:29px}
-.hero{min-height:0}
-h1{font-size:28px}
-.grid2{grid-template-columns:1fr}
-.tabs{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
-}
-@media(max-width:700px){
-.hd-in{height:60px;gap:12px}
-.hd-nav{display:none}
-.logo{font-size:16px}
-.hd-btn{font-size:12.5px;padding:9px 13px}
-.cards{grid-template-columns:1fr}
-.cta{padding:24px 20px}
-.cta .ttl{font-size:21px}
-.lead{font-size:18px}
-.ft-in{gap:14px}
-}
-/* phone: logo + toggle + CTA must all survive on a 390px bar, so tighten the type
-   and let the CTA label clamp instead of pushing the button off the screen */
-@media(max-width:460px){
-.hd-in{gap:8px;padding:0 14px}
-.logo{font-size:12.5px}
-.hd-btn{font-size:11px;padding:8px 10px;gap:5px;min-width:0}
-.hd-btn .lb{display:block;max-width:36vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.tgl{width:32px;height:32px}
-.wrap,.ft-in,.ft-bot{padding-left:14px;padding-right:14px}
-.page{padding:22px 14px 44px}
-/* phone: 2 even columns. 3 would starve the longest label ("Образ и внешность")
-   and force a mid-word wrap inside the pill. */
-.tabs{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:7px}
-.tab{font-size:12.5px;padding:9px 8px}
-}
-.hero:not(.about-hero) .art{background:var(--ink) url('/media/hero-cover.png') center right/cover no-repeat}.hero:not(.about-hero) .grid{display:none}.hero:not(.about-hero) .glow{display:none}@media(max-width:900px){.hero:not(.about-hero) .art{background-position:72% center}}.hero.about-hero{min-height:420px}.hero.about-hero .art{left:auto;right:0;width:50%;background:url('/media/about.jpg') right center/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 44%);mask-image:linear-gradient(90deg,transparent 0%,#000 44%)}.hero.about-hero .txt{max-width:50%;background:none}.hero.about-hero h1{font-size:32px;max-width:12ch}.hero.about-hero .desc{font-size:15px;max-width:30ch}@media(max-width:760px){.hero.about-hero{display:block;padding-top:210px}.hero.about-hero .art{left:0;right:0;width:100%;height:230px;background-position:center 22%;-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 62%,transparent 100%)}.hero.about-hero .txt{max-width:100%;padding-top:6px}.hero.about-hero h1{font-size:27px;max-width:none}.hero.about-hero .desc{max-width:none}}</style>
+  <!-- intro -->
+  <section id="intro">
+    <div class="env"><svg width="84" height="58" viewBox="0 0 84 58" fill="none"><rect x="1.5" y="1.5" width="81" height="55" rx="6" fill="#FFFCF6" stroke="#B5654A" stroke-width="2"/><path d="M3 5l39 27L81 5" stroke="#B5654A" stroke-width="2" stroke-linejoin="round"/><path d="M42 40c-4-3-8-6-8-10a4 4 0 018-1 4 4 0 018 1c0 4-4 7-8 10z" fill="#E9CFC2"/></svg></div>
+    <h1 class="hand">Письмо партнёру</h1>
+    <p class="sub">Когда трудно сказать вслух</p>
+    <p class="lead">Бывает, внутри уже целый разговор. А рядом с партнёром получается только «ничего» или очередная ссора. Письмо даёт время подобрать слова и сказать о том, что для тебя важно.</p>
+    <p class="p">Выбери одну тему. Дальше восемь коротких шагов: под каждым подсказка, пример и начало фразы, которое можно стереть. В конце из твоих ответов сложится готовое письмо. Первую версию можно оставить только для себя, отправлять письмо необязательно.</p>
+    <div class="priv"><span>🔒</span><span>Твои ответы видишь только ты. Они хранятся в этом браузере и никуда не отправляются.</span></div>
+    <button class="btn" id="start">Начать письмо</button>
+    <button class="btn link hidden" id="toLetter">Открыть моё письмо</button>
+  </section>
+
+  <!-- steps -->
+  <section id="steps" class="hidden">
+    <div class="prog"><span id="cnt">Шаг 1 из 9</span><div class="bar"><i id="bar"></i></div></div>
+    <div class="card">
+      <span class="opt hidden" id="opt">можно пропустить</span>
+      <h2 id="sh"></h2>
+      <p class="hint" id="shint"></p>
+      <details class="ex" id="sexw"><summary>Показать пример</summary><p id="sex"></p></details>
+      <textarea id="sta" rows="5"></textarea>
+      <div class="nav">
+        <button class="btn ghost" id="back">Назад</button>
+        <div class="r"><button class="btn link hidden" id="skip">Пропустить</button><button class="btn" id="next">Дальше</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- result -->
+  <section id="result" class="hidden">
+    <h1 class="hand" style="font-size:52px">Твоё письмо</h1>
+    <p class="p" style="color:var(--muted)">Перечитай его вслух. Если какую-то фразу ты бы не сказала лично, поправь её своими словами.</p>
+    <div class="sheet"><div class="letter" id="letter"></div></div>
+    <div class="acts">
+      <button class="btn" id="copy">Скопировать письмо</button>
+      <button class="btn ghost" id="share">Отправить</button>
+      <button class="btn ghost" id="edit">Изменить ответы</button>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <h3 class="hand">Как передать письмо</h3>
+    <div class="tips">
+      <div class="t"><b>Сначала перечитай его для себя</b><p>Здесь понятно, что случилось, что ты чувствуешь и чего хочешь? Есть одна конкретная просьба? Убери догадки о его мотивах: «ты специально меня игнорируешь» лучше заменить описанием ситуации. Если в черновике накопилось всё за несколько лет, сохрани его для себя, а для первого письма выбери одну тему.</p></div>
+      <div class="t"><b>Выбери подходящий момент</b><p>Можно сказать: «Я написала тебе кое-что важное. Когда тебе будет удобно спокойно прочитать?» Передай письмо тогда, когда у вас обоих будет возможность вернуться к разговору.</p></div>
+      <div class="t"><b>Оставь место для ответа</b><p>Он может согласиться, растеряться, не согласиться или попросить время. Обсудите, когда вернётесь к теме. Если разговор становится слишком напряжённым, можно сделать паузу и договориться о продолжении.</p></div>
+    </div>
+    <div class="safe">Если ты боишься угроз или насилия в ответ, не отправляй письмо ради упражнения. Сначала позаботься о своей безопасности и обратись за поддержкой. Всероссийский телефон доверия для женщин: <a href="tel:88007000600">8 800 7000 600</a>, круглосуточно и бесплатно.</div>
+
+    <h3 class="hand">После письма</h3>
+    <ul class="after">
+      <li>Что стало яснее о моих чувствах и желаниях?</li>
+      <li>О чём мы договорились или к какому вопросу хотим вернуться?</li>
+    </ul>
+
+    <div class="next">
+      <div class="hand" style="font-size:34px">Следующий шаг</div>
+      <p>Письмо помогает начать разговор. Дальше важно услышать ответ и понять, о чём вы оба готовы договариваться. Если хочешь разобрать свою ситуацию лично, напиши мне.</p>
+      <a class="btn" href="https://t.me/Aleksandra_Andriyanova" target="_blank" rel="noopener">Написать Александре</a>
+      <p style="margin:16px 0 0"><a href="/">Другие материалы</a></p>
+    </div>
+  </section>
+
+  <div class="foot">© Александра Андриянова · <a href="/">aleksandra-andriyanova.ru</a></div>
+</div>
+
 <script>
 (function(){
-  var d=document.documentElement;
-  function set(t){d.setAttribute('data-theme',t);}
-  var q=(location.search.match(/[?&]theme=(dark|light)/)||[])[1];
-  var s=null;try{s=localStorage.getItem('vi-theme');}catch(e){}
-  set(q||s||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
-  document.addEventListener('click',function(e){
-    var b=e.target.closest('.tgl');if(!b)return;
-    var n=d.getAttribute('data-theme')==='dark'?'light':'dark';
-    set(n);try{localStorage.setItem('vi-theme',n);}catch(err){}
-  });
+var S=[
+ {r:"greet",h:"Как ты к нему обращаешься?",hint:"Как ты называешь его, когда вам хорошо: по имени или тёплым словом.",ex:"Любимый",st:"",ph:"Например: Любимый"},
+ {h:"Что я ценю в наших отношениях",opt:1,hint:"Вспомни конкретный момент, в котором тебе было хорошо рядом с ним. Если сейчас не хочется писать о благодарности, этот шаг можно пропустить.",ex:"Я с теплом вспоминаю субботу, когда мы гуляли и ты рассказывал о своей работе. Я чувствовала, что мы рядом.",st:"Я с теплом вспоминаю ",af:"Мне хочется, чтобы у нас было больше таких моментов."},
+ {h:"О какой ситуации я хочу поговорить",hint:"Опиши один эпизод: что произошло, что было сказано или сделано. Без «ты всегда» и «ты никогда».",ex:"Вчера за ужином я начала рассказывать о своём дне, а ты продолжил смотреть видео.",st:"Сейчас мне хочется поговорить об одной ситуации: "},
+ {h:"Что я тогда почувствовала",hint:"Например: грусть, одиночество, злость, растерянность, нежность. Выбери свои слова.",ex:"В тот момент мне стало грустно и одиноко.",st:"В тот момент я почувствовала "},
+ {h:"Чего мне хочется",hint:"Внимания, совместного времени, поддержки, прикосновений, ясности? Что это означает именно для тебя?",ex:"Мне хотелось твоего внимания и возможности поделиться тем, что для меня важно.",st:"Мне важно "},
+ {h:"Что трудно мне самой",opt:1,hint:"Если хочешь, скажи о своей части. Это снимает с письма тон претензии.",ex:"Я замечаю, что часто замолкаю, а потом отвечаю резко. Хочу учиться говорить раньше, когда мне чего-то не хватает.",st:"Я замечаю, что мне самой трудно "},
+ {h:"О чём конкретно я хочу попросить",hint:"Один посильный шаг и подходящее время. «Будь внимательнее» каждый понимает по-своему, а «давай поговорим двадцать минут без телефонов» описывает действие, о котором можно договориться.",ex:"Давай сегодня после ужина отложим телефоны на двадцать минут и побудем вдвоём?",st:"У меня есть просьба: ",af:"Как ты к этому относишься? Если такой вариант тебе не подходит, давай подумаем, какой устроит нас обоих."},
+ {h:"Что я сама готова предложить",hint:"Только то, на что ты действительно согласна.",ex:"Я готова тоже отложить телефон и спокойно послушать, как ты.",st:"Со своей стороны я готова "},
+ {r:"close",h:"Как ты закончишь письмо?",hint:"Твои слова в конце и подпись.",ex:"Обнимаю тебя. Твоя Аня",st:"",ph:"Например: Обнимаю тебя"}
+];
+var INTRO="Я решила написать тебе, потому что мне непросто начать этот разговор вслух. Мне важно рассказать, что со мной происходит, и услышать тебя.";
+var BEFORE="Можешь прочитать и немного подумать. Давай выберем время, когда сможем спокойно поговорить. Когда тебе было бы удобно?";
+var KEY="lt-pismo-partneru-v2",A=S.map(function(s){return s.st||"";}),cur=0;
+try{var sv=JSON.parse(localStorage.getItem(KEY)||"null");if(sv&&sv.a&&sv.a.length===S.length){A=sv.a;cur=sv.c||0;}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({a:A,c:cur}));}catch(e){}}
+var $=function(id){return document.getElementById(id);};
+function show(id){["intro","steps","result"].forEach(function(x){$(x).classList.toggle("hidden",x!==id);});window.scrollTo({top:0,behavior:"smooth"});}
+function filled(i){var v=(A[i]||"").trim();return v&&v!==(S[i].st||"").trim()?v:"";}
+if(A.some(function(_,i){return filled(i);})){$("toLetter").classList.remove("hidden");$("start").textContent="Продолжить письмо";}
+function render(){var s=S[cur];$("cnt").textContent="Шаг "+(cur+1)+" из "+S.length;$("bar").style.width=((cur+1)/S.length*100)+"%";
+ $("sh").textContent=s.h;$("shint").textContent=s.hint;$("sex").textContent=s.ex;$("sexw").open=false;
+ $("opt").classList.toggle("hidden",!s.opt);$("skip").classList.toggle("hidden",!s.opt);
+ var ta=$("sta");ta.value=A[cur];ta.placeholder=s.ph||"";$("back").style.visibility=cur?"visible":"hidden";
+ $("next").textContent=cur===S.length-1?"Собрать письмо":"Дальше";
+ setTimeout(function(){ta.focus();try{ta.setSelectionRange(ta.value.length,ta.value.length);}catch(e){}},60);}
+function build(){var head="",body=[],close="";S.forEach(function(s,i){var v=filled(i);if(!v)return;
+ if(s.r==="greet"){head=v.replace(/[,.!\s]+$/,"")+",";return;}
+ if(s.r==="close"){close=v;return;}
+ if(!/[.!?…»)]$/.test(v))v+=".";if(s.af)v+=" "+s.af;body.push(v);});
+ var out=[];if(head)out.push(head);out.push(INTRO);out=out.concat(body);if(body.length)out.push(BEFORE);return {txt:out.join("\n\n")+(close?"\n\n"+close:""),close:close,main:out.join("\n\n")};}
+function result(){var b=build(),L=$("letter");L.textContent=b.main;if(b.close){var d=document.createElement("div");d.className="sig";d.textContent="\n"+b.close;L.appendChild(d);}show("result");}
+$("start").onclick=function(){show("steps");render();};
+$("toLetter").onclick=result;
+$("sta").addEventListener("input",function(){A[cur]=this.value;save();});
+$("next").onclick=function(){A[cur]=$("sta").value;if(cur<S.length-1){cur++;save();render();window.scrollTo({top:0,behavior:"smooth"});}else{save();result();}};
+$("skip").onclick=function(){A[cur]=S[cur].st||"";if(cur<S.length-1){cur++;save();render();}else result();};
+$("back").onclick=function(){A[cur]=$("sta").value;if(cur>0){cur--;save();render();}};
+$("edit").onclick=function(){cur=0;show("steps");render();};
+function toast(t){$("toast").textContent=t;setTimeout(function(){$("toast").textContent="";},2200);}
+function copy(t){if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t);}
+ return new Promise(function(ok,no){var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");ok();}catch(e){no(e);}document.body.removeChild(ta);});}
+$("copy").onclick=function(){copy(build().txt).then(function(){toast("Скопировано. Вставь письмо в заметки или в сообщение.");},function(){toast("Не получилось скопировать, выдели текст письма вручную.");});};
+$("share").onclick=function(){var t=build().txt;if(navigator.share){navigator.share({text:t}).catch(function(){});}
+ else{window.open("https://t.me/share/url?url="+encodeURIComponent(" ")+"&text="+encodeURIComponent(t),"_blank","noopener");}};
 })();
 </script>
-</head><body><header class="hd"><div class="hd-in"><a class="logo" href="/">Александра<i class="sq"></i>Андриянова</a><nav class="hd-nav"><a href="/">Все материалы</a><a href="/about/">Обо мне</a></nav><span class="sp"></span><div class="tools"><button class="tgl" type="button" aria-label="Сменить тему"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/></svg></button><a class="hd-btn" href="https://t.me/Aleksandra_Andriyanova"><span class="lb">Диагностика</span><span class="ar">&#8594;</span></a></div></div></header>
-<main class="page">
-<article class="pcol">
-<div class="bc"><a href="/#cat-otnosenia">Отношения</a></div>
-<h1>Письмо партнёру: когда трудно сказать вслух</h1>
-<p class="lead">Бывает, внутри уже целый разговор. А рядом с партнёром получается только «ничего» или очередная ссора. Письмо даёт время подобрать слова и сказать о том, что для тебя важно.</p>
-<p class="meta">Шаблон письма по шагам прямо на странице: под каждым пунктом подсказка, пример и поле для твоих слов. В конце одна кнопка собирает всё в готовое письмо, вторая копирует его.</p>
-<div class="how">Выбери одну тему. Заполни пункты по порядку, начало фразы уже стоит в поле, его можно стереть. Нажми «Собрать письмо». Первую версию можно оставить только для себя, отправлять письмо необязательно.</div>
-<div class="sec"><h2 id="sec-0">Напиши своё письмо</h2><div class="note">Твои ответы видишь только ты: они хранятся в твоём браузере и никуда не отправляются.</div><style>
-.lt-f{margin:26px 0 8px;padding:18px 18px 16px;border:1px solid var(--card-border);border-radius:14px;background:var(--card,transparent)}
-.lt-f h3{margin:0 0 6px}
-.lt-f .hint{color:var(--muted);font-size:15px;line-height:1.5;margin:0 0 6px}
-.lt-f .ex{color:var(--muted);font-size:14px;font-style:italic;margin:0 0 10px}
-.lt-f textarea{width:100%;box-sizing:border-box;min-height:96px;padding:12px 14px;font:inherit;font-size:16px;line-height:1.5;color:var(--text);background:var(--bg);border:1px solid var(--card-border);border-radius:10px;resize:vertical}
-.lt-f textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
-.lt-f .opt{font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-left:6px}
-.lt-out{margin:28px 0 10px;padding:20px;border:2px solid var(--accent);border-radius:14px;white-space:pre-wrap;line-height:1.6;font-size:16px}
-.lt-btns{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
-.lt-btns button{font:inherit;font-weight:600;font-size:15px;padding:12px 18px;border-radius:10px;cursor:pointer;border:1px solid var(--ink);background:var(--accent);color:var(--accent-ink)}
-.lt-btns button.sec{background:none;color:var(--text);border-color:var(--card-border)}
-</style><div class="lt" data-key="lt-pismo-partneru"><div class="lt-f"><h3>Обращение</h3><p class="hint">Как ты обычно называешь его, когда вам хорошо: по имени или тёплым словом.</p><textarea data-i="0" data-starter="" data-after="" data-role="greet" placeholder="Например: Любимый"></textarea></div><div class="lt-f"><h3>1. Что я ценю в наших отношениях<span class="opt">можно пропустить</span></h3><p class="hint">Вспомни конкретный момент, в котором тебе было хорошо рядом с ним. Если сейчас не хочется писать о благодарности, этот пункт можно пропустить.</p><p class="ex">Пример: Я с теплом вспоминаю субботу, когда мы гуляли и ты рассказывал о своей работе. Я чувствовала, что мы рядом.</p><textarea data-i="1" data-starter="Я с теплом вспоминаю " data-after="Мне хочется, чтобы у нас было больше таких моментов." data-role="p" placeholder="">Я с теплом вспоминаю </textarea></div><div class="lt-f"><h3>2. О какой ситуации я хочу поговорить</h3><p class="hint">Опиши один эпизод: что произошло, что было сказано или сделано. Без «ты всегда» и «ты никогда».</p><p class="ex">Пример: Вчера за ужином я начала рассказывать о своём дне, а ты продолжил смотреть видео.</p><textarea data-i="2" data-starter="Сейчас мне хочется поговорить об одной ситуации: " data-after="" data-role="p" placeholder="">Сейчас мне хочется поговорить об одной ситуации: </textarea></div><div class="lt-f"><h3>3. Что я тогда почувствовала</h3><p class="hint">Например: грусть, одиночество, злость, растерянность, нежность. Выбери свои слова.</p><p class="ex">Пример: В тот момент мне стало грустно и одиноко.</p><textarea data-i="3" data-starter="В тот момент я почувствовала " data-after="" data-role="p" placeholder="">В тот момент я почувствовала </textarea></div><div class="lt-f"><h3>4. Чего мне хочется</h3><p class="hint">Внимания, совместного времени, поддержки, прикосновений, ясности? Что это означает именно для тебя?</p><p class="ex">Пример: Мне хотелось твоего внимания и возможности поделиться тем, что для меня важно.</p><textarea data-i="4" data-starter="Мне важно " data-after="" data-role="p" placeholder="">Мне важно </textarea></div><div class="lt-f"><h3>5. Что трудно мне самой<span class="opt">можно пропустить</span></h3><p class="hint">Если хочешь, скажи о своей части. Это снимает с письма тон претензии.</p><p class="ex">Пример: Я замечаю, что часто замолкаю, а потом отвечаю резко. Хочу учиться говорить раньше, когда мне чего-то не хватает.</p><textarea data-i="5" data-starter="Я замечаю, что мне самой трудно " data-after="" data-role="p" placeholder="">Я замечаю, что мне самой трудно </textarea></div><div class="lt-f"><h3>6. О чём конкретно я хочу попросить</h3><p class="hint">Один посильный шаг и подходящее время. «Будь внимательнее» каждый понимает по-своему, а «давай поговорим двадцать минут без телефонов» описывает действие, о котором можно договориться.</p><p class="ex">Пример: Давай сегодня после ужина отложим телефоны на двадцать минут и побудем вдвоём?</p><textarea data-i="6" data-starter="У меня есть просьба: " data-after="Как ты к этому относишься? Если такой вариант тебе не подходит, давай подумаем, какой устроит нас обоих." data-role="p" placeholder="">У меня есть просьба: </textarea></div><div class="lt-f"><h3>7. Что я сама готова предложить</h3><p class="hint">Только то, на что действительно согласна.</p><p class="ex">Пример: Я готова тоже отложить телефон и спокойно послушать, как ты.</p><textarea data-i="7" data-starter="Со своей стороны я готова " data-after="" data-role="p" placeholder="">Со своей стороны я готова </textarea></div><div class="lt-f"><h3>Завершение и подпись</h3><p class="hint">Твои слова в конце письма.</p><textarea data-i="8" data-starter="" data-after="" data-role="close" placeholder="Например: Обнимаю тебя."></textarea></div><div class="lt-btns"><button type="button" class="lt-make">Собрать письмо</button><button type="button" class="lt-reset sec">Очистить</button></div><div class="lt-res" style="display:none"><div class="lt-out"></div><div class="lt-btns"><button type="button" class="lt-copy">Скопировать письмо</button></div></div></div><script>(function(){var root=document.querySelector('.lt');if(!root)return;var D={"intro": "Я решила написать тебе, потому что мне непросто начать этот разговор вслух. Мне важно рассказать, что со мной происходит, и услышать тебя.", "before_close": "Можешь прочитать и немного подумать. Давай выберем время, когда сможем спокойно поговорить. Когда тебе было бы удобно?"};var key=root.getAttribute('data-key');var tas=root.querySelectorAll('textarea');try{var saved=JSON.parse(localStorage.getItem(key)||'null');if(saved){tas.forEach(function(t,i){if(typeof saved[i]==='string')t.value=saved[i];});}}catch(e){}function save(){try{localStorage.setItem(key,JSON.stringify(Array.prototype.map.call(tas,function(t){return t.value;})));}catch(e){}}tas.forEach(function(t){t.addEventListener('input',save);});function val(t){var v=t.value.trim(),s=(t.getAttribute('data-starter')||'').trim();if(!v||v===s)return '';return v;}function build(){var head='',body=[],close='';tas.forEach(function(t){var v=val(t);if(!v)return;var r=t.getAttribute('data-role');if(!/[.!?…»)]$/.test(v)&&r!=='greet')v+='.';var a=t.getAttribute('data-after');if(a)v+=' '+a;if(r==='greet')head=v.replace(/[,.!]+$/,'')+',';else if(r==='close')close=v;else body.push(v);});var out=[];if(head)out.push(head);if(D.intro)out.push(D.intro);out=out.concat(body);if(D.before_close&&body.length)out.push(D.before_close);if(close)out.push(close);return out.join('\n\n');}var res=root.querySelector('.lt-res'),box=root.querySelector('.lt-out');root.querySelector('.lt-make').addEventListener('click',function(){var txt=build();box.textContent=txt||'Заполни хотя бы один пункт, и здесь появится твоё письмо.';res.style.display='block';res.scrollIntoView({behavior:'smooth',block:'start'});});root.querySelector('.lt-copy').addEventListener('click',function(){var b=this,txt=build();function ok(){var o=b.textContent;b.textContent='Скопировано';setTimeout(function(){b.textContent=o;},1600);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,function(){fallback();});}else fallback();function fallback(){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(ta);}});root.querySelector('.lt-reset').addEventListener('click',function(){if(!confirm('Очистить все ответы?'))return;tas.forEach(function(t){t.value=t.getAttribute('data-starter')||'';});save();res.style.display='none';});})();</script><h3>Если сейчас трудно говорить о тепле</h3><p>Пропусти первый пункт и начни так: «Между нами сейчас непросто. Мне важно сказать, что я переживаю, и понять, готовы ли мы это обсуждать». Тебе не нужно писать о любви или благодарности, если сейчас это не соответствует твоим чувствам.</p></div>
-<div class="sec"><h2 id="sec-1">Как передать письмо</h2><h3>Сначала перечитай его для себя</h3><p>Проверь: здесь понятно, что случилось, что ты чувствуешь и чего хочешь? Есть ли одна конкретная просьба? Убери догадки о его мотивах. «Ты специально меня игнорируешь» лучше заменить описанием ситуации.</p><p>Если в черновике накопилось всё за несколько лет, сохрани его для себя. Для первого письма выбери одну тему. Остальное можно обсудить отдельно.</p><h3>Выбери подходящий момент</h3><p>Можно сказать: «Я написала тебе кое-что важное. Когда тебе будет удобно спокойно прочитать?» Передай письмо тогда, когда у вас обоих будет возможность вернуться к разговору.</p><h3>Оставь место для ответа</h3><p>Партнёр может согласиться, растеряться, не согласиться или попросить время. Обсудите, когда вернётесь к теме. Если разговор становится слишком напряжённым, можно сделать паузу и договориться о продолжении.</p><div class="note">Если ты боишься угроз или насилия в ответ, не отправляй письмо ради упражнения. Сначала позаботься о своей безопасности и обратись за поддержкой. Круглосуточный телефон доверия для женщин: 8 800 7000 600.</div></div>
-<div class="sec"><h2 id="sec-2">Что ты заметила после письма</h2><ul><li>Что стало яснее о моих чувствах и желаниях?</li><li>О чём мы договорились или к какому вопросу хотим вернуться?</li></ul><p>Письмо помогает начать разговор. Дальше важно услышать ответ и понять, о чём вы оба готовы договариваться.</p></div>
-<div class="cta"><span class="eyebrow"><i class="dot"></i>Следующий шаг</span><div class="ttl">Хочешь разобрать свою ситуацию лично</div><p class="sub">Материалы в базе показывают механику в целом. На личной диагностике разбираем твой конкретный случай, находим узел и первый шаг именно для тебя.</p><a class="cta-btn" href="https://t.me/Aleksandra_Andriyanova">Написать Александре<span class="ar">&#8594;</span></a></div>
-</article>
-</main>
-<footer class="ft"><div class="ft-in"><a class="logo" href="/">Александра<i class="sq"></i>Андриянова</a><span class="sp"></span><nav class="ft-links"><a href="/">Все материалы</a><a href="/about/">Обо мне</a><a href="https://t.me/Aleksandra_Andriyanova">Диагностика</a></nav></div><div class="ft-bot">Александра Андриянова · <a href="https://www.instagram.com/aleksandra__andriyanova/">Instagram @aleksandra__andriyanova</a> · Эволюция с Александрой Андрияновой</div></footer>
-<script>
-document.querySelectorAll('.copy').forEach(function(b){
-  b.addEventListener('click',function(){
-    navigator.clipboard.writeText(b.getAttribute('data-text')).then(function(){
-      var o=b.textContent;b.textContent='Скопировано';b.classList.add('done');
-      setTimeout(function(){b.textContent=o;b.classList.remove('done');},1600);
-    });
-  });
-});
-</script>
-</body></html>
+</body>
+</html>
