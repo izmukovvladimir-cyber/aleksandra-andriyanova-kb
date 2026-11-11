@@ -181,7 +181,7 @@ var KEY="lt-pismo-partneru-v2",A=S.map(function(s){return s.st||"";}),cur=0;
 try{var sv=JSON.parse(localStorage.getItem(KEY)||"null");if(sv&&sv.a&&sv.a.length===S.length){A=sv.a;cur=sv.c||0;}}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify({a:A,c:cur}));}catch(e){}}
 var $=function(id){return document.getElementById(id);};
-function show(id){["intro","steps","result"].forEach(function(x){$(x).classList.toggle("hidden",x!==id);});window.scrollTo({top:0,behavior:"smooth"});}
+function show(id){["intro","steps","result"].forEach(function(x){$(x).classList.toggle("hidden",x!==id);});window.scrollTo({top:0,behavior:"smooth"});if(id==="result"&&window.guideFinal)window.guideFinal();}
 function filled(i){var v=(A[i]||"").trim();return v&&v!==(S[i].st||"").trim()?v:"";}
 if(A.some(function(_,i){return filled(i);})){$("toLetter").classList.remove("hidden");$("start").textContent="Продолжить письмо";}
 function render(){var s=S[cur];$("cnt").textContent="Шаг "+(cur+1)+" из "+S.length;$("bar").style.width=((cur+1)/S.length*100)+"%";
@@ -207,6 +207,30 @@ function toast(t){$("toast").textContent=t;setTimeout(function(){$("toast").text
 function copy(t){if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t);}
  return new Promise(function(ok,no){var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");ok();}catch(e){no(e);}document.body.removeChild(ta);});}
 $("copy").onclick=function(){copy(build().txt).then(function(){toast("Скопировано. Вставь письмо в заметки или в сообщение.");},function(){toast("Не получилось скопировать, выдели текст письма вручную.");});};
+})();
+</script>
+<script>
+(function () {
+  var PAGE = "guide-pismo-partneru";
+  var URL = "https://hooks.vladimir-izhmukov.ru/alexandra/hit";
+  var sent = {};
+  function hit(event) {
+    if (sent[event]) return;
+    sent[event] = true;
+    var body = JSON.stringify({ page: PAGE, event: event });
+    try { if (navigator.sendBeacon && navigator.sendBeacon(URL, body)) return; } catch (e) {}
+    try { fetch(URL, { method: "POST", body: body, keepalive: true, mode: "cors" }); } catch (e) {}
+  }
+  function onScroll() {
+    var doc = document.documentElement;
+    var max = Math.max(doc.scrollHeight - window.innerHeight, 1);
+    var p = (window.scrollY || doc.scrollTop) / max;
+    if (p >= 0.5) hit("read50");
+    if (p >= 0.98) { hit("read100"); window.removeEventListener("scroll", onScroll); }
+  }
+  hit("open");
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.guideFinal = function () { hit("final"); };
 })();
 </script>
 </body>
