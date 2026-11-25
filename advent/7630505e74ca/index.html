@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer">
+<title>День 20 · Адвент для двоих</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{--paper:#F8F0EC;--paper2:#F1E2E3;--sheet:#FFFCFA;--ink:#3A2A2E;--muted:#7D6670;--line:#E8D3DA;
+--accent:#D6336C;--accent-d:#B5245A;--rose:#F6D3DE;--gold:#C9A24B}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:17px/1.6 Manrope,system-ui,sans-serif;min-height:100vh;
+background-image:radial-gradient(circle at 15% 10%,rgba(246,211,222,.85),transparent 45%),radial-gradient(circle at 90% 85%,rgba(246,211,222,.6),transparent 40%)}
+.wrap{max-width:640px;margin:0 auto;padding:22px 18px 60px;position:relative;z-index:2}
+.brand{text-align:center;margin-top:34px}
+.brand .k{font:700 13px/1 Manrope;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.brand h1{font:500 40px/1.1 Lora,serif;margin:10px 0 4px}
+.brand .sub{font:500 26px/1 Caveat,cursive;color:var(--accent-d)}
+.wk{text-align:center;color:var(--muted);font-size:14px;margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin:26px 0 22px}
+.box{aspect-ratio:1;border-radius:10px;display:flex;align-items:center;justify-content:center;font:600 14px Manrope;
+position:relative;text-decoration:none;color:var(--ink);background:var(--sheet);border:1.5px solid var(--line)}
+.box.past{background:var(--rose);border-color:var(--rose);color:var(--accent-d)}
+.box.done:after{content:'';position:absolute;right:3px;top:3px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.box.now{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 6px 16px -6px rgba(214,51,108,.7)}
+.box.lock{color:#A9838F;background:repeating-linear-gradient(90deg,transparent 0 44%,rgba(214,51,108,.18) 44% 56%,transparent 56%),
+repeating-linear-gradient(0deg,transparent 0 44%,rgba(214,51,108,.18) 44% 56%,transparent 56%),var(--sheet)}
+.card{background:var(--sheet);border-radius:22px;padding:26px 22px;box-shadow:0 16px 40px -24px rgba(120,40,70,.45);margin:16px 0;position:relative}
+.dn{font:500 64px/1 Lora,serif;color:var(--rose);position:absolute;right:20px;top:14px}
+.card h2{font:500 30px/1.2 Lora,serif;margin-bottom:16px;padding-right:70px}
+.word{background:#FBE3EA;border-radius:16px;padding:16px 18px;font:italic 18px/1.55 Lora,serif;color:#6E2E45}
+.word .sig{display:block;font:600 24px/1 Caveat,cursive;color:var(--accent);margin-top:8px;font-style:normal}
+.tl{font:700 12px/1 Manrope;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:22px 0 10px}
+.task p{margin:0 0 12px}
+.task p.ph{background:var(--paper);border-radius:12px;padding:10px 14px;font-size:15px;color:var(--muted)}
+.task p.ph b{color:var(--accent-d)}
+label{display:block;font:600 14px Manrope;color:var(--muted);margin:14px 0 6px}
+textarea{width:100%;min-height:92px;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;font:16px/1.5 Manrope;
+background:#fff;color:var(--ink);resize:vertical}
+textarea:focus{outline:none;border-color:var(--accent)}
+.saved{font-size:13px;color:#5E7F5A;height:18px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px/1 Manrope;padding:15px 22px;border-radius:999px;
+border:0;cursor:pointer;background:var(--accent);color:#FFF8F2;text-decoration:none;width:100%}
+.btn.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+.photo img{width:100%;border-radius:14px;margin-top:10px;display:block}
+.gift{display:none;background:linear-gradient(135deg,#FCE6EE,#FFF6E8);border:1.5px dashed var(--gold)}
+.gift.open{display:block}.gift li{margin:6px 0 6px 20px}
+.lockgift{display:block;text-align:center;color:var(--muted);font-size:15px}
+.lockgift.hide{display:none}
+.how li{margin:6px 0 6px 20px}
+.foot{text-align:center;color:var(--muted);font-size:13px;margin-top:28px}
+#map{width:100%;border-radius:16px;margin-top:14px;display:none}
+</style><style>
+.garland{position:fixed;top:0;left:0;right:0;height:46px;z-index:3;pointer-events:none}
+.garland svg{width:100%;height:46px}
+.bulb{animation:tw 1.6s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:1}50%{opacity:.35}}
+.snow{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.flake{position:absolute;top:-20px;color:#fff;text-shadow:0 0 6px rgba(214,51,108,.35);animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.box.now:before{content:'';position:absolute;top:-7px;left:50%;width:22px;height:12px;transform:translateX(-50%);
+background:radial-gradient(circle at 30% 50%,var(--gold) 0 35%,transparent 36%),radial-gradient(circle at 70% 50%,var(--gold) 0 35%,transparent 36%)}
+.spark{position:absolute;width:10px;height:10px;background:var(--gold);clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);opacity:.8}
+.brand .tree{display:block;margin:0 auto 6px}
+</style></head><body><div class="garland"><svg viewBox="0 0 2000 46" preserveAspectRatio="xMinYMin slice"><path d="M0 12 Q20 30 40 14 T80 14 T120 14 T160 14 T200 14 T240 14 T280 14 T320 14 T360 14 T400 14 T440 14 T480 14 T520 14 T560 14 T600 14 T640 14 T680 14 T720 14 T760 14 T800 14 T840 14 T880 14 T920 14 T960 14 T1000 14 T1040 14 T1080 14 T1120 14 T1160 14 T1200 14 T1240 14 T1280 14 T1320 14 T1360 14 T1400 14 T1440 14 T1480 14 T1520 14 T1560 14 T1600 14 T1640 14 T1680 14 T1720 14 T1760 14 T1800 14 T1840 14 T1880 14 T1920 14 T1960 14 T2000 14" stroke="#7a5a3a" stroke-width="1.5" fill="none" opacity=".55"/><circle class="bulb" cx="20" cy="20" r="5" fill="#D6336C" style="animation-delay:1.2s"/><circle class="bulb" cx="60" cy="26" r="5" fill="#C9A24B" style="animation-delay:0.8s"/><circle class="bulb" cx="100" cy="20" r="5" fill="#F6A5C0" style="animation-delay:0.4s"/><circle class="bulb" cx="140" cy="26" r="5" fill="#E8D3DA" style="animation-delay:0.0s"/><circle class="bulb" cx="180" cy="20" r="5" fill="#B5245A" style="animation-delay:1.0s"/><circle class="bulb" cx="220" cy="26" r="5" fill="#D6336C" style="animation-delay:0.6s"/><circle class="bulb" cx="260" cy="20" r="5" fill="#C9A24B" style="animation-delay:0.2s"/><circle class="bulb" cx="300" cy="26" r="5" fill="#F6A5C0" style="animation-delay:1.2s"/><circle class="bulb" cx="340" cy="20" r="5" fill="#E8D3DA" style="animation-delay:0.8s"/><circle class="bulb" cx="380" cy="26" r="5" fill="#B5245A" style="animation-delay:0.4s"/><circle class="bulb" cx="420" cy="20" r="5" fill="#D6336C" style="animation-delay:0.0s"/><circle class="bulb" cx="460" cy="26" r="5" fill="#C9A24B" style="animation-delay:1.0s"/><circle class="bulb" cx="500" cy="20" r="5" fill="#F6A5C0" style="animation-delay:0.6s"/><circle class="bulb" cx="540" cy="26" r="5" fill="#E8D3DA" style="animation-delay:0.2s"/><circle class="bulb" cx="580" cy="20" r="5" fill="#B5245A" style="animation-delay:1.2s"/><circle class="bulb" cx="620" cy="26" r="5" fill="#D6336C" style="animation-delay:0.8s"/><circle class="bulb" cx="660" cy="20" r="5" fill="#C9A24B" style="animation-delay:0.4s"/><circle class="bulb" cx="700" cy="26" r="5" fill="#F6A5C0" style="animation-delay:0.0s"/><circle class="bulb" cx="740" cy="20" r="5" fill="#E8D3DA" style="animation-delay:1.0s"/><circle class="bulb" cx="780" cy="26" r="5" fill="#B5245A" style="animation-delay:0.6s"/><circle class="bulb" cx="820" cy="20" r="5" fill="#D6336C" style="animation-delay:0.2s"/><circle class="bulb" cx="860" cy="26" r="5" fill="#C9A24B" style="animation-delay:1.2s"/><circle class="bulb" cx="900" cy="20" r="5" fill="#F6A5C0" style="animation-delay:0.8s"/><circle class="bulb" cx="940" cy="26" r="5" fill="#E8D3DA" style="animation-delay:0.4s"/><circle class="bulb" cx="980" cy="20" r="5" fill="#B5245A" style="animation-delay:0.0s"/><circle class="bulb" cx="1020" cy="26" r="5" fill="#D6336C" style="animation-delay:1.0s"/><circle class="bulb" cx="1060" cy="20" r="5" fill="#C9A24B" style="animation-delay:0.6s"/><circle class="bulb" cx="1100" cy="26" r="5" fill="#F6A5C0" style="animation-delay:0.2s"/><circle class="bulb" cx="1140" cy="20" r="5" fill="#E8D3DA" style="animation-delay:1.2s"/><circle class="bulb" cx="1180" cy="26" r="5" fill="#B5245A" style="animation-delay:0.8s"/><circle class="bulb" cx="1220" cy="20" r="5" fill="#D6336C" style="animation-delay:0.4s"/><circle class="bulb" cx="1260" cy="26" r="5" fill="#C9A24B" style="animation-delay:0.0s"/><circle class="bulb" cx="1300" cy="20" r="5" fill="#F6A5C0" style="animation-delay:1.0s"/><circle class="bulb" cx="1340" cy="26" r="5" fill="#E8D3DA" style="animation-delay:0.6s"/><circle class="bulb" cx="1380" cy="20" r="5" fill="#B5245A" style="animation-delay:0.2s"/><circle class="bulb" cx="1420" cy="26" r="5" fill="#D6336C" style="animation-delay:1.2s"/><circle class="bulb" cx="1460" cy="20" r="5" fill="#C9A24B" style="animation-delay:0.8s"/><circle class="bulb" cx="1500" cy="26" r="5" fill="#F6A5C0" style="animation-delay:0.4s"/><circle class="bulb" cx="1540" cy="20" r="5" fill="#E8D3DA" style="animation-delay:0.0s"/><circle class="bulb" cx="1580" cy="26" r="5" fill="#B5245A" style="animation-delay:1.0s"/><circle class="bulb" cx="1620" cy="20" r="5" fill="#D6336C" style="animation-delay:0.6s"/><circle class="bulb" cx="1660" cy="26" r="5" fill="#C9A24B" style="animation-delay:0.2s"/><circle class="bulb" cx="1700" cy="20" r="5" fill="#F6A5C0" style="animation-delay:1.2s"/><circle class="bulb" cx="1740" cy="26" r="5" fill="#E8D3DA" style="animation-delay:0.8s"/><circle class="bulb" cx="1780" cy="20" r="5" fill="#B5245A" style="animation-delay:0.4s"/><circle class="bulb" cx="1820" cy="26" r="5" fill="#D6336C" style="animation-delay:0.0s"/><circle class="bulb" cx="1860" cy="20" r="5" fill="#C9A24B" style="animation-delay:1.0s"/><circle class="bulb" cx="1900" cy="26" r="5" fill="#F6A5C0" style="animation-delay:0.6s"/><circle class="bulb" cx="1940" cy="20" r="5" fill="#E8D3DA" style="animation-delay:0.2s"/><circle class="bulb" cx="1980" cy="26" r="5" fill="#B5245A" style="animation-delay:1.2s"/></svg></div><div class="snow"></div>
+<main class="wrap">
+<header class="brand"><svg class="tree" width="44" height="50" viewBox="0 0 44 50"><path d="M22 2l6 10h-4l8 12h-5l9 14H8l9-14h-5l8-12h-4z" fill="#D6336C" opacity=".85"/><rect x="19" y="38" width="6" height="8" rx="1" fill="#C9A24B"/><circle cx="22" cy="3" r="2.5" fill="#C9A24B"/></svg><div class="k">Адвент для двоих</div><h1>31 день друг к другу</h1>
+<div class="sub">с Александрой Андрияновой</div><div class="wk">Неделя 3. Свидания и вдохновение</div></header>
+<div id="enc" data-iv="7Ms7vqpj3dqenbkW" data-ct="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" hidden></div><div id="app"></div>
+<p class="foot">Адвент для двоих · Александра Андриянова · @aleksandra__andriyanova</p>
+</main>
+<script>(function(){var s=document.querySelector('.snow');if(!s)return;for(var i=0;i<26;i++){var f=document.createElement('div');
+f.className='flake';f.textContent=i%3?'❄':'✦';f.style.left=Math.random()*100+'vw';f.style.fontSize=(8+Math.random()*12)+'px';
+f.style.opacity=.35+Math.random()*.5;f.style.animationDuration=(9+Math.random()*12)+'s';f.style.animationDelay=(-Math.random()*20)+'s';s.appendChild(f)}})();function startApp(){
+const DAY=20, KEYDAY=[[1, "Наши желания на этот месяц"], [9, "Наш ритуал встречи"], [12, "Наше стоп-слово"], [24, "Наши общие мечты"], [29, "Наш договор пары"]], GIFT=0, ALL=31;
+let db;const op=indexedDB.open('advent-dvoih',1);
+op.onupgradeneeded=e=>{e.target.result.createObjectStore('kv')};
+op.onsuccess=e=>{db=e.target.result;init()};
+function put(k,v){return new Promise(r=>{const t=db.transaction('kv','readwrite');t.objectStore('kv').put(v,k);t.oncomplete=r})}
+function get(k){return new Promise(r=>{const q=db.transaction('kv').objectStore('kv').get(k);q.onsuccess=()=>r(q.result)})}
+async function init(){
+  for(const id of ['he','she','key']){const el=document.getElementById(id);if(!el)continue;
+    el.value=(await get(DAY+':'+id))||'';let tm;el.addEventListener('input',()=>{clearTimeout(tm);tm=setTimeout(async()=>{
+      await put(DAY+':'+id,el.value);flash();check()},400)})}
+  const ph=await get(DAY+':photo');if(ph)showPhoto(ph);
+  for(const b of document.querySelectorAll('.box[data-d]')){if(await get(b.dataset.d+':done'))b.classList.add('done')}
+  check();
+}
+function flash(){const s=document.getElementById('saved');s.textContent='Сохранено на этом телефоне';setTimeout(()=>s.textContent='',1800)}
+async function check(){const he=(await get(DAY+':he'))||'',she=(await get(DAY+':she'))||'';
+  if(he.trim()&&she.trim()){await put(DAY+':done',1);const b=document.querySelector('.box.now');if(b)b.classList.add('done');
+    const g=document.getElementById('gift');if(g){g.classList.add('open');document.getElementById('giftlock').classList.add('hide')}}}
+function showPhoto(src){const p=document.getElementById('photoprev');p.innerHTML='<img alt="Фото дня" src="'+src+'">'}
+document.getElementById('file').addEventListener('change',ev=>{const f=ev.target.files[0];if(!f)return;const im=new Image();
+  im.onload=async()=>{const k=Math.min(1,1080/Math.max(im.width,im.height)),c=document.createElement('canvas');
+    c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+    const d=c.toDataURL('image/jpeg',.82);await put(DAY+':photo',d);showPhoto(d);flash()};im.src=URL.createObjectURL(f)});
+// карта пары (день 31)
+function wrap(x,t,X,Y,W,lh,max){const words=(t||'').replace(/\s+/g,' ').trim().split(' ');let line='',n=0;
+  for(const w of words){const tt=line?line+' '+w:w;if(x.measureText(tt).width>W&&line){x.fillText(line,X,Y);Y+=lh;line=w;if(++n>=max-1){line+='…';break}}else line=tt}
+  if(line){x.fillText(line,X,Y);Y+=lh}return Y}
+function loadImg(s){return new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=s})}
+function cover(x,img,X,Y,W,H,r){x.save();x.beginPath();x.roundRect(X,Y,W,H,r);x.clip();const k=Math.max(W/img.width,H/img.height);
+  x.drawImage(img,X+(W-img.width*k)/2,Y+(H-img.height*k)/2,img.width*k,img.height*k);x.restore()}
+async function buildMap(){await document.fonts.ready;const c=document.createElement('canvas');c.width=1080;c.height=1920;const x=c.getContext('2d');
+  const g=x.createLinearGradient(0,0,0,1920);g.addColorStop(0,'#FBE3EA');g.addColorStop(1,'#F8F0EC');x.fillStyle=g;x.fillRect(0,0,1080,1920);
+  x.fillStyle='#D6336C';x.font='700 26px Manrope';x.textAlign='center';x.fillText('АДВЕНТ ДЛЯ ДВОИХ · 31 ДЕНЬ ВМЕСТЕ',540,92);
+  x.fillStyle='#3A2A2E';x.font='500 74px Lora';x.fillText('Карта нашей пары',540,178);
+  let y=220;const photos=[];for(let d=1;d<=31;d++){const p=await get(d+':photo');if(p)photos.push(p)}
+  const cov=(await get('31:photo'))||photos[photos.length-1];
+  if(cov){const i=await loadImg(cov);if(i){cover(x,i,90,y,900,440,36);y+=480}}
+  x.textAlign='left';const items=[];for(const [d,lab] of KEYDAY){const v=(await get(d+':key'))||'';if(v.trim())items.push([lab,v])}
+  const he=(await get('31:he'))||'',she=(await get('31:she'))||'';if(he.trim())items.push(['Что понял он',he]);if(she.trim())items.push(['Что поняла она',she]);
+  for(const [lab,v] of items){if(y>1600)break;x.fillStyle='#D6336C';x.font='700 24px Manrope';x.fillText(lab.toUpperCase(),90,y+30);
+    x.fillStyle='#3A2A2E';x.font='italic 34px Lora';y=wrap(x,v,90,y+72,900,44,3)+8}
+  const rest=photos.filter(p=>p!==cov).slice(-6);if(rest.length&&y<1600){const s=140,gap=12;let px=90;
+    for(const p of rest){const i=await loadImg(p);if(i)cover(x,i,px,y+10,s,s,18);px+=s+gap}y+=s+30}
+  x.textAlign='center';x.fillStyle='#7D6670';x.font='600 26px Manrope';x.fillText(photos.length+' фото · 31 день друг к другу',540,1800);
+  x.fillStyle='#D6336C';x.font='700 30px Caveat';x.font='700 40px Caveat';x.fillText('с Александрой Андрияновой @aleksandra__andriyanova',540,1860);
+  const url=c.toDataURL('image/png'),m=document.getElementById('map');m.src=url;m.style.display='block';
+  const a=document.getElementById('dl');a.href=url;a.style.display='flex'}
+const mb=document.getElementById('mapbtn');if(mb)mb.addEventListener('click',buildMap);
+}
+(async()=>{const el=document.getElementById('enc'),app=document.getElementById('app');
+const b=s=>Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')+'==='.slice((s.length+3)%4)),c=>c.charCodeAt(0));
+try{const k=location.hash.slice(1);if(!k)throw 0;
+const key=await crypto.subtle.importKey('raw',b(k),'AES-GCM',false,['decrypt']);
+const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b(el.dataset.iv)},key,b(el.dataset.ct));
+app.innerHTML=new TextDecoder().decode(pt);startApp()}catch(e){app.innerHTML='<section class="card"><h2>Ячейка закрыта</h2>'+
+'<p>Откройте её по ссылке, которую прислал бот: в ссылке есть ваш личный ключ. Если ссылка потерялась, напишите боту.</p></section>'}})();</script></body></html>
